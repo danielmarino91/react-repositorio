@@ -19,6 +19,8 @@
 .navbar
 {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #212529;
     padding: 1rem;
 }
@@ -139,4 +141,16 @@ h2
 .itemList a:hover
 {
     color: #f34213;
+}
+
+.cartWidget
+{
+    display:flex;
+    color: white;
+    font-size: 2rem;
+}
+
+.cartWidget p
+{
+    margin: 0rem 1rem;
 }

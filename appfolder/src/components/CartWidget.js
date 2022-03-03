@@ -1,6 +1,10 @@
-function CartWidget()
+import { AiOutlineShoppingCart } from "react-icons/ai";
+
+function CartWidget(number)
 {
-    //<img src={process.env.PUBLIC_URL + "/assets/cartwidget.png" } alt="CartWidget"/>
+    return(
+        <div className="cartWidget"><AiOutlineShoppingCart/><p>{number.numero}</p></div>
+    )
 }
 
 export default CartWidget
