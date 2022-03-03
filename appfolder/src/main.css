@@ -50,13 +50,16 @@
 
 footer
 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #212529;
     padding: 2rem;
     color: #f34213;
     text-align: center;
 }
 
-section
+main
 {
     display: flex;
     flex-direction: column;
@@ -64,4 +67,76 @@ section
     color: white;
     font-size: 3rem;
     text-align: center;
+}
+
+.links
+{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 1rem;
+
+}
+
+.links li
+{
+    margin: 0rem 0.5rem;
+}
+
+.links a
+{
+    transition: color 0.2s;
+    text-decoration: none;
+    color: white;
+}
+
+.links a:hover
+{
+    color: #f34213;
+}
+
+.button
+{
+    background-color: #f34213;
+    border-radius: 2px;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.buttonContainer
+{
+    display: flex;
+    
+}
+
+h2
+{
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.itemList
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.itemList li
+{
+    list-style: none;   
+}
+
+.itemList a
+{
+    text-decoration: none;
+    color: white;
+}
+
+.itemList a:hover
+{
+    color: #f34213;
 }
