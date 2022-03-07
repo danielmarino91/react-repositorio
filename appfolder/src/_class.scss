@@ -1,0 +1,111 @@
+.navbar
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $navbar-color;
+    padding: 1rem;
+
+    ul
+    {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        margin-left: 1rem;
+    }
+
+    li
+    {
+        margin: 0rem 0.5rem;
+    }
+
+    a
+    {
+        transition: color 0.2s;
+        text-decoration: none;
+        color: $font-color;
+    }
+
+    a:hover
+    {
+        color: $main-color;
+    }
+}
+
+.links
+{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 1rem;
+
+    li
+    {
+        margin: 0rem 0.5rem;
+    }
+
+    a
+    {
+        transition: color 0.2s;
+        text-decoration: none;
+        color: white;
+    }
+
+    a:hover
+    {
+        color: $main-color;
+    }
+}
+
+.button
+{
+    background-color: $main-color;
+    border-radius: 2px;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.buttonContainer
+{
+    display: flex;
+    
+}
+
+.itemList
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+
+    li
+    {
+        list-style: none;   
+    }
+
+    a
+    {
+        text-decoration: none;
+        color: white;
+    }
+
+    a:hover
+    {
+        color: $main-color;
+    }
+}
+
+.cartWidget
+{
+    display:flex;
+    color: white;
+    font-size: 2rem;
+
+    p
+    {
+        margin: 0rem 1rem;
+    }
+}
+
