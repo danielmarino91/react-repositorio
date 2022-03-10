@@ -1,7 +1,12 @@
+import {useState} from "react"
 import Button from "./Button"
 
 function Main(props)
 {
+    const [loading, setLoading] = useState(true);
+    const [productos, setProductos] = useState([]);
+
+    
     return (
         <main>
             <h2>Hola, soy {props.nombre} {props.apellido} y tengo {props.edad} años!</h2>
