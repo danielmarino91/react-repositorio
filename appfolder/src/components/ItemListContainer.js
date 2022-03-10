@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import ItemList from './ItemList'
 
 const productos = [
@@ -34,7 +34,7 @@ const productPromise = new Promise((res)=>{
     }, 2000);
 })
 
-function ItemListContainer(props)
+function ItemListContainer()
 {
     const [productos, setProductos] = useState([])
 
@@ -46,7 +46,6 @@ function ItemListContainer(props)
 
     return (
     <>
-        <div>{props.greeting}</div>
         <ItemList productos={productos}/>
     </>
     )
