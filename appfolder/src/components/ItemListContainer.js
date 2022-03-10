@@ -1,25 +1,30 @@
 import React, { useEffect, useState } from 'react'
-import ItemCount from './ItemCount'
 import ItemList from './ItemList'
 
 const productos = [
     {
         id: "1",
         nombre: "Crash Bandicoot 4: It's About Time",
+        imagen: "assets/producto0.png",
+        detalle: "Juego de aventura y plataformas",
         precio: 9000,
-        stock: 10,
+        stock: 13,
     },
     {
         id: "2",
         nombre: "Cyberpunk 2077",
+        imagen: "assets/producto1.png",
+        detalle: "Juego de rol y aventura",
         precio: 6000,
-        stock: 10,
+        stock: 15,
     },
     {
         id: "3",
         nombre: "DeathLoop",
+        imagen: "assets/producto2.png",
+        detalle: "Juego de accion en primera persona",
         precio: 10000,
-        stock: 10,
+        stock: 21,
     }
 ]
 
@@ -41,8 +46,7 @@ function ItemListContainer(props)
 
     return (
     <>
-        <div className='saludo'>{props.greeting}</div>
-        <ItemCount initial={1} stock={5}/>
+        <div>{props.greeting}</div>
         <ItemList productos={productos}/>
     </>
     )

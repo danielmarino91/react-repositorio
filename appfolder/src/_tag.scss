@@ -12,10 +12,7 @@ footer
 main
 {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: $font-color;
-    font-size: 3rem;
+    justify-content: center;
     text-align: center;
 }
 

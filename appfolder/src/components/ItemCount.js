@@ -1,6 +1,6 @@
 import {useState} from "react"
 
-function ItemCount(prop, miOnAdd)
+function ItemCount(prop)
 {
     const [contador, setContador] = useState(prop.initial);
     const stock = useState(prop.stock);
@@ -37,7 +37,6 @@ function ItemCount(prop, miOnAdd)
     return(
         <>
             <div className="contador"> 
-                <p>Producto</p>
                 <div className="contador__buttons">
                     <button onClick={restar}>-</button>
                     <p>{contador}</p>

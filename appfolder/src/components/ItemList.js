@@ -4,7 +4,7 @@ import Item from './Item'
 const ItemList = ({productos}) => {
     return (
     <>
-        <div> {productos.map(producto =>{return <Item producto={producto} />})}</div>
+        <div className="itemListStyle"> {productos.map(producto =>{return <Item producto={producto} />})}</div>
     </>
     )
 }

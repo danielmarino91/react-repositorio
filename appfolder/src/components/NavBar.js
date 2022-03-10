@@ -7,7 +7,7 @@ function NavBar()
         <nav className="navbar">
             <img src={"assets/kyotogameslogo.png"} alt="Kyoto Games Logo"/>
             <Links/>
-            <CartWidget numero="4"/>
+            <CartWidget numero="0"/>
             
         </nav>
     )
