@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import ItemList from './ItemList'
 
 const productos = [
@@ -28,26 +28,25 @@ const productos = [
     }
 ]
 
-const productPromise = new Promise((res)=>{
+const productPromise = new Promise((res) => {
     setTimeout(() => {
-    res(productos)
+        res(productos)
     }, 2000);
 })
 
-function ItemListContainer()
-{
+function ItemListContainer() {
     const [productos, setProductos] = useState([])
 
-    useEffect(()=>{
-    productPromise
-    .then((data)=> setProductos(data))
-    .catch((err)=> console.log(err))
+    useEffect(() => {
+        productPromise
+            .then((data) => setProductos(data))
+            .catch((err) => console.log(err))
     })
 
     return (
-    <>
-        <ItemList productos={productos}/>
-    </>
+        <>
+            <ItemList productos={productos} />
+        </>
     )
 }
 

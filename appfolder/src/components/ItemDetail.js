@@ -1,14 +1,12 @@
-function ItemDetail()
-{
-  return(
+function ItemDetail(detalle) {
+  return (
     <div className='itemStyle'>
-        <h3>{producto.nombre}</h3>
-        <img src={producto.imagen}></img>
-        <p className="itemStyle__price">{producto.precio}$</p>
-        <p className="itemStyle__detail">{producto.detalle}</p>
-        <ItemCount initial={1} stock={producto.stock}/>
-    </div> 
-)
+      <h3>{detalle.nombre}</h3>
+      <img src={detalle.imagen} alt="Producto"></img>
+      <p className="itemStyle__price">{detalle.precio}$</p>
+      <p className="itemStyle__detail">{detalle.info}</p>
+    </div>
+  )
 }
 
 export default ItemDetail

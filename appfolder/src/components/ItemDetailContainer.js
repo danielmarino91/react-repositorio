@@ -1,35 +1,35 @@
-function ItemDetailContainer() {
-  const productosDetalle =
+import React, { useEffect, useState } from 'react'
+import ItemDetail from './ItemDetail'
+
+const productosDetalle = [
   {
-    id: "1",
     nombre: "Crash Bandicoot 4: It's About Time",
     imagen: "assets/producto0.png",
-    detalle: "Juego de aventura y plataformas",
+    info: "Juego de aventura y plataformas",
     precio: 9000,
-    stock: 13,
   }
+]
 
-  const productDetailPromise = new Promise((res) => {
-    setTimeout(() => {
-      res(productosDetalle)
-    }, 2000);
+const productDetailPromise = new Promise((res) => {
+  setTimeout(() => {
+    res(productosDetalle)
+  }, 2000);
+})
+
+function ItemDetailContainer() {
+  const [detalle, setDetail] = useState()
+
+  useEffect(() => {
+    productDetailPromise
+      .then((data) => setDetail(data))
+      .catch((err) => console.log(err))
   })
 
-  function ItemDetailContainer() {
-    const [productos, setProductos] = useState([])
-
-    useEffect(() => {
-      productDetailPromise
-        .then((data) => setProductos(data))
-        .catch((err) => console.log(err))
-    })
-
-    return (
-      <>
-        <ItemList productos={productos} />
-      </>
-    )
-  }
+  return (
+    <>
+      <ItemDetail detalle={detalle} />
+    </>
+  )
 }
 
 export default ItemDetailContainer
