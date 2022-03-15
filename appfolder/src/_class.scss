@@ -151,6 +151,11 @@
             padding: 1rem;
             background-color: $navbar-color;
         }
+
+    .contador__otherButtons
+    {
+        display: flex;
+    }
 }
 
 .itemStyle
