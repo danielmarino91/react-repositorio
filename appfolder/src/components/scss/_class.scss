@@ -199,3 +199,50 @@
 {
     display: flex;
 }
+
+.itemDetail
+{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid $main-color;
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin: 1rem;
+    background-color: $background-color-3;
+    color: white;
+    font-size: 1rem;
+
+    img
+    {
+        border: 2px solid $main-color;
+        border-radius: 4px;
+        margin: 0.5rem;
+        width: 20%;
+    }
+
+    .itemDetail__detail
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        margin: 1rem;
+
+        span
+        {
+            color: $main-color;
+        }
+
+        h3
+        {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        p
+        {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,10 +1,12 @@
-function ItemDetail ({productos}) {
+function ItemDetail({ detalle }) {
   return (
-    <div className='itemStyle'>
-      <h3>{productos.nombre}</h3>
-      <img src={productos.imagen} alt="Producto"></img>
-      <p className="itemStyle__price">{productos.precio}$</p>
-      <p className="itemStyle__detail">{productos.info}</p>
+    <div className="itemDetail">
+      <img src={detalle.imagen}></img>
+      <div className="itemDetail__detail">
+        <h3><span>Titulo:</span> {detalle.nombre}</h3>
+        <p className="itemStyle__price"><span>Precio:</span> {detalle.precio}$</p>
+        <p className="itemStyle__detail"><span>Información:</span> {detalle.info}</p>
+      </div>
     </div>
   )
 }
