@@ -1,34 +1,35 @@
 import React, { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
 
-const productosDetalle = [
+const productos = 
   {
-    nombre: "Crash Bandicoot 4: It's About Time",
-    imagen: "assets/producto0.png",
-    info: "Juego de aventura y plataformas",
-    precio: 9000,
+      id: "1",
+      nombre: "Crash Bandicoot 4: It's About Time",
+      imagen: "assets/producto0.png",
+      detalle: "Juego de aventura y plataformas",
+      precio: 9000,
+      stock: 13,
   }
-]
 
-const productDetailPromise = new Promise((res) => {
+const productPromise = new Promise((res) => {
   setTimeout(() => {
-    res(productosDetalle)
-  }, 2000);
+      res(productos)
+  }, 4000);
 })
 
 function ItemDetailContainer() {
-  const [detalle, setDetail] = useState()
+  const [productos, setProductos] = useState([])
 
   useEffect(() => {
-    productDetailPromise
-      .then((data) => setDetail(data))
-      .catch((err) => console.log(err))
+      productPromise
+          .then((data) => setProductos(data))
+          .catch((err) => console.log(err))
   })
 
   return (
-    <>
-      <ItemDetail detalle={detalle} />
-    </>
+      <>
+          <ItemDetail productos={productos} />
+      </>
   )
 }
 
