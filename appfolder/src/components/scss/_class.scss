@@ -164,13 +164,15 @@
     flex-direction: column;
     align-items: center;
     margin: 1rem;
-    border: 2px solid $main-color;
     width: 400px;
     background-color: $background-color-2;
+    @include boxShadow; 
+    cursor: pointer;
+    transition: transform 0.3s;
+    transform: scale(1,1);
 
     h3
     {
-        background-color: $main-color;
         padding: 1rem;
         color: white;
         width: 100%;
@@ -178,10 +180,9 @@
 
     img
     {
+        border: 3px solid $color-7;
         margin: 1rem;
-        border: 2px solid $main-color;
-        border-radius: 1.5rem;
-        width: 70%;
+        width: 80%;
     }
 
     .itemStyle__price
@@ -196,6 +197,11 @@
         color: white;
         font-size: 1.1rem;
     }
+}
+
+.itemStyle:hover
+{
+    transform: scale(1.02,1.02);
 }
 
 .itemListStyle
@@ -214,6 +220,7 @@
     background-color: $background-color-3;
     color: white;
     font-size: 1rem;
+    @include boxShadow; 
 
     img
     {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ItemList from './ItemList'
+import Loader from "./Loader"
 
 const productos = [
     {
@@ -28,23 +29,26 @@ const productos = [
     }
 ]
 
-const productPromise = new Promise((res) => {
+const productPromise = new Promise((res, rej) => {
     setTimeout(() => {
         res(productos)
-    }, 2000);
+    }, 1500);
 })
 
 function ItemListContainer() {
     const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         productPromise
             .then((data) => setProductos(data))
             .catch((err) => console.log(err))
+            .finally(()=>{setLoading(false)})
     })
 
     return (
         <>
+            <p>{loading ? <Loader/> : ""}</p>
             <ItemList productos={productos} />
         </>
     )

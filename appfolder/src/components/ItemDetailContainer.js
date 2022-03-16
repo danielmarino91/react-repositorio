@@ -11,10 +11,10 @@ const productosDetalle =
       stock: 13,
   }
 
-const productDetailPromise = new Promise((res) => {
+const productDetailPromise = new Promise((res, rej) => {
   setTimeout(() => {
       res(productosDetalle)
-  }, 1000);
+  }, 2000);
 })
 
 function ItemDetailContainer() {
