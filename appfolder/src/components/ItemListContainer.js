@@ -48,7 +48,19 @@ function ItemListContainer() {
             }, 1500);
         })
         productPromise
-            .then((data) => {setProductos(data)})
+            //.then((data) => {setProductos(data)})
+            .then((data) => {
+                if (id)
+                {
+                    const juegosEncontrados = juegos.filter(data => data.id == id)
+                    console.log(juegosEncontrados)
+                    setProductos(juegosEncontrados)
+                }
+                else
+                {
+                    setProductos(data)
+                }
+            })
             .catch((err) => { toast.error(err) })
             .finally(() => { setLoading(false) })
     }, [id])
