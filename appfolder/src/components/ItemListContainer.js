@@ -5,11 +5,10 @@ import Loader from "./Loader"
 import { useParams } from "react-router-dom"
 
 function ItemListContainer() {
-
+    console.log("Se ejecuto la funcion")
     const [productos, setProductos] = useState([])
-    const [loading, setLoading] = useState(true)
-
-    const respuestaParams = useParams()
+    const [Loading, setLoading] = useState(true)
+    const {id} = useParams()
 
     const juegos = [
         {
@@ -42,20 +41,21 @@ function ItemListContainer() {
     ]
 
     useEffect(() => {
+        console.log("Se ejecuto useEffect")
         const productPromise = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(juegos)
             }, 1500);
         })
         productPromise
-            .then((data) => { setProductos(data) })
+            .then((data) => {setProductos(data)})
             .catch((err) => { toast.error(err) })
             .finally(() => { setLoading(false) })
-    }, [respuestaParams])
+    }, [id])
 
     return (
         <>
-            <p>{loading ? <Loader /> : ""}</p>
+            <p>{Loading ? <Loader /> : ""}</p>
             <ItemList productos={productos} />
         </>
     )
