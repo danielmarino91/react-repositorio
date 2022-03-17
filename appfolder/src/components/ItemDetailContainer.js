@@ -1,23 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 import ItemDetail from './ItemDetail'
+import JUEGOS from "./db_juegos.json"
 
 function ItemDetailContainer() {
   const [productosDetalle, setProductosDetalle] = useState([])
 
   useEffect(() => {
+    
+    const productosDetalle = JUEGOS[0];
 
-    const productosDetalle =
-    {
-      id: "1",
-      nombre: "Crash Bandicoot 4: It's About Time",
-      imagen: "assets/producto0.png",
-      info: "Juego de aventura y plataformas",
-      precio: 9000,
-      stock: 13,
-    }
-
-    const productDetailPromise = new Promise((resolve, reject) => {
+    const productDetailPromise = new Promise((resolve) => {
       setTimeout(() => {
         resolve(productosDetalle)
       }, 1000);
@@ -27,7 +20,7 @@ function ItemDetailContainer() {
       .catch((err) => {toast.error(err)})
   }, [])
 
-  return (
+  return(
     <>
       <ItemDetail detalle={productosDetalle} />
     </>

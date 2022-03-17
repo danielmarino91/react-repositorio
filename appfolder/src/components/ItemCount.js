@@ -24,7 +24,7 @@ function ItemCount(prop) {
     }
 
     const agregarAlCarrito = () => {
-        toast.success(`Se agrego el producto al carrito`);
+        toast.success(`Se agrego ${prop.titulo} al carrito`);
     }
 
     return (

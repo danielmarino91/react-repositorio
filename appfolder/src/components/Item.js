@@ -1,16 +1,16 @@
 import React from "react"
-import ItemCount from "./ItemCount"
 import { Link } from "react-router-dom"
-import ItemDetailContainer from "./ItemDetailContainer"
 
-function Item({producto})
-{
-    return(
+function Item({ producto }) {
+    return (
+        <Link to="/item/crashbandicoot4">
             <div className='itemStyle'>
                 <h3>{producto.nombre}</h3>
                 <img src={producto.imagen}></img>
-                <ItemCount initial={1} stock={producto.stock}/>
-            </div> 
+                <div className="gameGenreBadge">{producto.categoria}</div>
+                <div className="stockAvaible">Stock disponible: {producto.stock}</div>
+            </div>
+        </Link>
     )
 }
 
