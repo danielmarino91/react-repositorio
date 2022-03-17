@@ -2,29 +2,41 @@ import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 import ItemDetail from './ItemDetail'
 import JUEGOS from "./db_juegos.json"
+import Loader from "./Loader"
+import { useParams } from "react-router-dom"
 
 function ItemDetailContainer() {
   const [productosDetalle, setProductosDetalle] = useState([])
+  const [Loading, setLoading] = useState(true)
+  const { id } = useParams()
+  
+  const juegos = JUEGOS[id];
 
   useEffect(() => {
-    
-    const productosDetalle = JUEGOS[0];
 
     const productDetailPromise = new Promise((resolve) => {
       setTimeout(() => {
-        resolve(productosDetalle)
-      }, 1000);
+        resolve(juegos)
+      }, 900);
     })
     productDetailPromise
-      .then((data) => {setProductosDetalle(data)})
-      .catch((err) => {toast.error(err)})
-  }, [])
+      .then((data) => { setProductosDetalle(data) })
+      .catch((err) => { toast.error(err) })
+      .finally(() => { setLoading(false) })
+  }, [id])
 
-  return(
-    <>
-      <ItemDetail detalle={productosDetalle} />
-    </>
-  )
+  if (Loading) {
+    return <Loader />
+  }
+  else {
+    return (
+      <>
+        <p>{Loading ? <Loader /> : ""}</p>
+        <ItemDetail detalle={productosDetalle} />
+      </>
+    )
+  }
+
 }
 
 export default ItemDetailContainer

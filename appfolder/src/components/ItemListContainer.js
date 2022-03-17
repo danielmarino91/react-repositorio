@@ -13,7 +13,7 @@ function ItemListContainer() {
     const juegos = JUEGOS;
 
     useEffect(() => {
-        const productPromise = new Promise((resolve, reject) => {
+        const productPromise = new Promise((resolve) => {
             setTimeout(() => {
                 resolve(juegos)
             }, 900);
