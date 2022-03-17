@@ -1,11 +1,14 @@
-function Links()
-{
+import { NavLink } from "react-router-dom"
+
+function Links() {
     return (
             <ul className="links">
-                <li><a href="#">Categoria 1</a></li>
-                <li><a href="#">Categoria 2</a></li>
-                <li><a href="#">Categoria 3</a></li>
-            </ul>
+                <NavLink to="/">Inicio</NavLink>
+                <NavLink to="/categoria/1">Categoria 1</NavLink>
+                <NavLink to="/categoria/2">Categoria 2</NavLink>
+                <NavLink to="/categoria/3">Categoria 3</NavLink>
+                <NavLink to="/carrito">Carrito</NavLink>
+            </ul >
     )
 }
 

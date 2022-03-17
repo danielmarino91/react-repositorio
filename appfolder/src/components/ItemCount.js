@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { toast } from "react-toastify";
 
 function ItemCount(prop) {
     const [contador, setContador] = useState(prop.initial);
@@ -23,7 +24,7 @@ function ItemCount(prop) {
     }
 
     const agregarAlCarrito = () => {
-        console.log(`Se agregaron ${contador} unidades del producto`)
+        toast.success(`Se agrego el producto al carrito`);
     }
 
     return (
@@ -35,7 +36,8 @@ function ItemCount(prop) {
                     <button onClick={sumar}>+</button>
                 </div>
                 <div className="contador__otherButtons">
-                    <button onClick={agregarAlCarrito}>Agregar al carrito</button>
+                    <button onClick={agregarAlCarrito}>Agregar al carrito</button> 
+                    
                 </div>
             </div>
         </>
