@@ -2,8 +2,9 @@
     {
         "id": "0",
         "nombre": "Crash Bandicoot 4: It's About Time",
-        "imagen": "assets/producto0.png",
-        "detalle": "Crash está de regreso en esta cuarta entrega en un nuevo enfrentamiento contra el siniestro Dr. Neo Cortex. Ahora la batalla se dará en una persecución desafiando tiempo y espacio con objetos como las máscaras cuánticas que son capaces de alterar la realidad.",
+        "link": "crashbandicoot4itsabouttime",
+        "imagen": "/assets/producto0.png",
+        "detalle": "Crash está de regreso en esta cuarta entrega en un nuevo enfrentamiento contra el siniestro Dr. Neo Cortex. Ahora la batalla se dará en una persecución desafiando tiempo y espacio con objetos como las máscaras cuánticas que son capaces de alterar la realidad",
         "precio": 9000,
         "categoria": "Plataformas",
         "stock": 10
@@ -11,8 +12,9 @@
     {
         "id": "1",
         "nombre": "Cyberpunk 2077",
-        "imagen": "assets/producto1.png",
-        "detalle": "Los creadores de The Witcher y The Witcher 2: Assassins of Kings anuncian este proyecto que te trasladará a la ciudad de Night City en el futuro año 2077. Allí verás una humanidad bastante degradada que utiliza la tecnología intensivamente, de tal manera que nuestra esencia se ha perdido.",
+        "link": "cyberpunk2077",
+        "imagen": "/assets/producto1.png",
+        "detalle": "Los creadores de The Witcher y The Witcher 2: Assassins of Kings anuncian este proyecto que te trasladará a la ciudad de Night City en el futuro año 2077. Allí verás una humanidad bastante degradada que utiliza la tecnología intensivamente, de tal manera que nuestra esencia se ha perdido",
         "precio": 6000,
         "categoria": "Rol",
         "stock": 10
@@ -20,8 +22,9 @@
     {
         "id": "2",
         "nombre": "DeathLoop",
-        "imagen": "assets/producto2.png",
-        "detalle": " Este título de aventura y disparos en primera persona te transporta a la isla donde en un ciclo interminable dos asesinos se enfrentan eternamente. ¿Podrás acabar con todos lo objetivos?.",
+        "link": "deathLoop",
+        "imagen": "/assets/producto2.png",
+        "detalle": " Este título de aventura y disparos en primera persona te transporta a la isla donde en un ciclo interminable dos asesinos se enfrentan eternamente. ¿Podrás acabar con todos lo objetivos?",
         "precio": 10000,
         "categoria": "Shooter",
         "stock": 10
@@ -29,8 +32,9 @@
     {
         "id": "3",
         "nombre": "Doom Eternal",
-        "imagen": "assets/producto3.png",
-        "detalle": " Este título es la secuela de Doom, siendo que ahora el infierno se desata sobre la Tierra. Tu misión será detener el avance de la maldad que creaturas y demonios pretenden imponer en nuestro hogar, por lo que tus habilidades y las más poderosas armas serán puestas a prueba.",
+        "link": "doometernal",
+        "imagen": "/assets/producto3.png",
+        "detalle": " Este título es la secuela de Doom, siendo que ahora el infierno se desata sobre la Tierra. Tu misión será detener el avance de la maldad que creaturas y demonios pretenden imponer en nuestro hogar, por lo que tus habilidades y las más poderosas armas serán puestas a prueba",
         "precio": 3800,
         "categoria": "Shooter",
         "stock": 10
@@ -38,8 +42,9 @@
     {
         "id": "4",
         "nombre": "GTA The Trilogy",
-        "imagen": "assets/producto4.png",
-        "detalle": " Este título compilatorio trae de vuelta tres historias épicas de la franquicia: Grand Theft Auto: III, Grand Theft Auto: Vice City y Grand Theft Auto: San Andreas; en una versión actualizada para la nueva generación de consolas en aspectos gráficos como iluminación, texturas y demás.",
+        "link": "gtathetrilogy",
+        "imagen": "/assets/producto4.png",
+        "detalle": " Este título compilatorio trae de vuelta tres historias épicas de la franquicia: Grand Theft Auto: III, Grand Theft Auto: Vice City y Grand Theft Auto: San Andreas; en una versión actualizada para la nueva generación de consolas en aspectos gráficos como iluminación, texturas y demás",
         "precio": 12000,
         "categoria": "Accion",
         "stock": 10
@@ -47,8 +52,9 @@
     {
         "id": "5",
         "nombre": "Guilty Gear Strive",
-        "imagen": "assets/producto5.png",
-        "detalle": " Desarrollado por Arc System Works, Guilty Gear -Strive- es la más reciente entrega de la saga Guilty Gear, creada por Daisuke Ishiwatari en 1998. Se trata de una reconstrucción con varios de los elementos clásicos de la serie y representa la conclusión en la historia de Sol Badguy.",
+        "link": "guiltygearstrive",
+        "imagen": "/assets/producto5.png",
+        "detalle": " Desarrollado por Arc System Works, Guilty Gear -Strive- es la más reciente entrega de la saga Guilty Gear, creada por Daisuke Ishiwatari en 1998. Se trata de una reconstrucción con varios de los elementos clásicos de la serie y representa la conclusión en la historia de Sol Badguy",
         "precio": 10000,
         "categoria": "Peleas",
         "stock": 10
@@ -56,7 +62,8 @@
     {
         "id": "6",
         "nombre": "It Takes Two",
-        "imagen": "assets/producto6.png",
+        "link": "ittakestwo",
+        "imagen": "/assets/producto6.png",
         "detalle": " Una pareja al borde del divorcio tendrá que trabajar junta para regresar a su forma humana después de que un libro los transformara en muñeco. En su aventura encontrarán escenarios llenos de sorpresas y nuevas mecánicas",
         "precio": 8100,
         "categoria": "Plataformas",
@@ -65,8 +72,9 @@
     {
         "id": "7",
         "nombre": "Metroid Dread",
-        "imagen": "assets/producto7.png",
-        "detalle": " La franquicia Metroid está de regreso con esta entrega que se ambienta después de los hechos ocurridos en Metroid Fusion. Aquí estarás en el papel de la cazadora de recompensas Samus Aran que deberá enfrentarse a la amenaza robótica E.M.M.I en el planeta ZDR.",
+        "link": "metroiddread",
+        "imagen": "/assets/producto7.png",
+        "detalle": " La franquicia Metroid está de regreso con esta entrega que se ambienta después de los hechos ocurridos en Metroid Fusion. Aquí estarás en el papel de la cazadora de recompensas Samus Aran que deberá enfrentarse a la amenaza robótica E.M.M.I en el planeta ZDR",
         "precio": 11000,
         "categoria": "Aventura",
         "stock": 10
@@ -74,8 +82,9 @@
     {
         "id": "8",
         "nombre": "Nioh 2",
-        "imagen": "assets/producto8.png",
-        "detalle": " Este título es la secuela de la primera entrega de Nioh, franquicia que te introduce a un mundo lleno de demonios y amenazas a las cuales combatirás con artes de combate samurái. Conforme se libere mayor información de la secuela aquí se dará a conocer.",
+        "link": "nioh2",
+        "imagen": "/assets/producto8.png",
+        "detalle": " Este título es la secuela de la primera entrega de Nioh, franquicia que te introduce a un mundo lleno de demonios y amenazas a las cuales combatirás con artes de combate samurái. Conforme se libere mayor información de la secuela aquí se dará a conocer",
         "precio": 9000,
         "categoria": "Accion",
         "stock": 10
@@ -83,8 +92,9 @@
     {
         "id": "9",
         "nombre": "Psychonauts 2",
-        "imagen": "assets/producto9.png",
-        "detalle": " Este título es la segunda entrega de la franquicia Psychonauts en la cual seguirás las andanzas de su protagonista Raz. Aquí el protagonista cumple su sueño de llegar al Cuartel General de Psychonauts, pero sólo para descubrir que cosas siniestras se están fraguando a la sombra y que tu intervención es de vital importancia.",
+        "link": "psychonauts2",
+        "imagen": "/assets/producto9.png",
+        "detalle": " Este título es la segunda entrega de la franquicia Psychonauts en la cual seguirás las andanzas de su protagonista Raz. Aquí el protagonista cumple su sueño de llegar al Cuartel General de Psychonauts, pero sólo para descubrir que cosas siniestras se están fraguando a la sombra y que tu intervención es de vital importancia",
         "precio": 9000,
         "categoria": "Aventura",
         "stock": 10
@@ -92,8 +102,9 @@
     {
         "id": "10",
         "nombre": "Ratchet and Clank Rift Apart",
-        "imagen": "assets/producto10.png",
-        "detalle": " La franquicia Ratchet & Clan nos ha acompañado desde PS2 y ahora está de regreso para PS5 con este título en el que sus protagonistas se reinventan para ofrecer una aventura llena de acción y desafíos.",
+        "link": "ratchetandclankriftapart",
+        "imagen": "/assets/producto10.png",
+        "detalle": " La franquicia Ratchet & Clan nos ha acompañado desde PS2 y ahora está de regreso para PS5 con este título en el que sus protagonistas se reinventan para ofrecer una aventura llena de acción y desafíos",
         "precio": 6750,
         "categoria": "Aventura",
         "stock": 10
@@ -101,8 +112,9 @@
     {
         "id": "11",
         "nombre": "Resident Evil Village",
-        "imagen": "assets/producto11.png",
-        "detalle": " La octava entrega de la franquicia Resident Evil, con perspectiva en primera persona, te pone nuevamente en el papel de Ethan, quien se trasladará una aldea nevada donde eventos sobrenaturales harán que el miedo a lo desconocido cobre una nueva dimensión.",
+        "link": "residentevilvillage",
+        "imagen": "/assets/producto11.png",
+        "detalle": " La octava entrega de la franquicia Resident Evil, con perspectiva en primera persona, te pone nuevamente en el papel de Ethan, quien se trasladará una aldea nevada donde eventos sobrenaturales harán que el miedo a lo desconocido cobre una nueva dimensión",
         "precio": 10000,
         "categoria": "Survival Horror",
         "stock": 10
@@ -110,8 +122,9 @@
     {
         "id": "12",
         "nombre": "Returnal",
-        "imagen": "assets/producto12.png",
-        "detalle": " En este título de acción, ciencia ficción y terror serás lanzado al espacio y aterrizarás en un planeta desconocido en el que morir es algo seguro, así que cada vez que regreses de la muerte te enfrentarás a nuevas adversidades.",
+        "link": "returnal",
+        "imagen": "/assets/producto12.png",
+        "detalle": " En este título de acción, ciencia ficción y terror serás lanzado al espacio y aterrizarás en un planeta desconocido en el que morir es algo seguro, así que cada vez que regreses de la muerte te enfrentarás a nuevas adversidades",
         "precio": 10400,
         "categoria": "Accion",
         "stock": 10
@@ -119,21 +132,21 @@
     {
         "id": "13",
         "nombre": "Spider-Man: Miles Morales",
-        "imagen": "assets/producto13.png",
-        "detalle": " En este título veremos por primera vez enfundarse el traje de Spider-Man a Miles Morales, quien deberá recorrer un difícil camino por convertirse en héroe de Nueva York. La lucha entre una corporación energética y un ejército criminal de alta tecnología serán el duro reto para Miles Morales.",
+        "link": "spidermanmilesmorales",
+        "imagen": "/assets/producto13.png",
+        "detalle": " En este título veremos por primera vez enfundarse el traje de Spider-Man a Miles Morales, quien deberá recorrer un difícil camino por convertirse en héroe de Nueva York. La lucha entre una corporación energética y un ejército criminal de alta tecnología serán el duro reto para Miles Morales",
         "precio": 9000,
         "categoria": "Accion",
         "stock": 10
-    }
-    ,
+    },
     {
         "id": "14",
         "nombre": "Yakuza Like a Dragon",
-        "imagen": "assets/producto14.png",
-        "detalle": " Este título de la franquicia Yakuza te traslada a Yokohama en el papel de Ichiban Kasuga, quien acaba de salir de la prisión, tras purgar una condena de 18 años por el asesinato del joven heredero de la familia Arakawa. ¿Cómo sobrevivirá en un mundo donde no tiene amigos ni el respeto de nadie?.",
+        "link": "yakuzalikeadragon",
+        "imagen": "/assets/producto14.png",
+        "detalle": " Este título de la franquicia Yakuza te traslada a Yokohama en el papel de Ichiban Kasuga, quien acaba de salir de la prisión, tras purgar una condena de 18 años por el asesinato del joven heredero de la familia Arakawa. ¿Cómo sobrevivirá en un mundo donde no tiene amigos ni el respeto de nadie?",
         "precio": 4800,
         "categoria": "Rol",
         "stock": 10
     }
-    
 ]

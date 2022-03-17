@@ -36,8 +36,8 @@ function ItemCount(prop) {
                     <button onClick={sumar}>+</button>
                 </div>
                 <div className="contador__otherButtons">
-                    <button onClick={agregarAlCarrito}>Agregar al carrito</button> 
-                    
+                    <button onClick={agregarAlCarrito}>Agregar al carrito</button>
+
                 </div>
             </div>
         </>

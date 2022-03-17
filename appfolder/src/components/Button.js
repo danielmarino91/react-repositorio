@@ -1,5 +1,4 @@
-function Button(props)
-{
+function Button(props) {
     return (
         <button className="button">
             {props.texto}

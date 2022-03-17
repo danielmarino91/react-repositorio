@@ -1,10 +1,9 @@
 import NavBar from "./NavBar";
 
-function Header()
-{
+function Header() {
     return (
         <header>
-            <NavBar/>
+            <NavBar />
         </header>
     )
 }

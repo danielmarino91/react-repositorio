@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 import ItemList from './ItemList'
 import Loader from "./Loader"
 import { useParams } from "react-router-dom"
-import  JUEGOS  from "./db_juegos.json"
+import JUEGOS from "./db_juegos.json"
 
 function ItemListContainer() {
     const [productos, setProductos] = useState([])

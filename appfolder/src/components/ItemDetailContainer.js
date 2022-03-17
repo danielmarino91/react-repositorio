@@ -9,7 +9,7 @@ function ItemDetailContainer() {
   const [productosDetalle, setProductosDetalle] = useState([])
   const [Loading, setLoading] = useState(true)
   const { id } = useParams()
-  
+
   const juegos = JUEGOS[id];
 
   useEffect(() => {

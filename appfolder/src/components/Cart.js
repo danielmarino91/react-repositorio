@@ -5,7 +5,7 @@ const Cart = () => {
   return (
     <div className="cartStyle">
       <p>No hay productos agregados al carrito</p>
-      <BsFillCartXFill/>
+      <BsFillCartXFill />
     </div>
   )
 }

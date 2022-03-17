@@ -225,8 +225,8 @@
     img
     {
         border: 3px solid $color-7;
-        margin: 0.5rem;
-        width: 30%;
+        margin: 1rem;
+        width: 26%;
     }
 
     .itemDetail__detail
@@ -238,16 +238,21 @@
         width: 50%;
         margin: 1rem;
 
+        .itemDetail__title
+        {
+            font-size: 4rem;
+            color: $main-color;
+        }
+
         span
         {
             color: $main-color;
         }
-
+        
         p
         {
             font-size: 1.8rem;
             padding: 1rem;
-
         }
     }
 }
