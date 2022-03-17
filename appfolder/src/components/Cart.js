@@ -1,8 +1,12 @@
 import React from 'react'
+import { BsFillCartXFill } from "react-icons/bs";
 
 const Cart = () => {
   return (
-    <div>Carrito</div>
+    <div className="cartStyle">
+      <p>No hay productos agregados al carrito</p>
+      <BsFillCartXFill/>
+    </div>
   )
 }
 

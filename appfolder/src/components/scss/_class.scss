@@ -267,3 +267,27 @@
     margin-bottom: 1rem;
     color: $main-color;
 }
+
+.cartStyle
+{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 650px;
+
+    svg
+    {
+        margin: 1rem;
+        width: 200px;
+        height: 200px;
+        color: white;
+    }
+
+    p
+    {
+        font-size: 3rem;
+        color: white;
+    }
+}

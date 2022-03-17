@@ -10,7 +10,6 @@ function Item({producto})
                 <h3>{producto.nombre}</h3>
                 <img src={producto.imagen}></img>
                 <ItemCount initial={1} stock={producto.stock}/>
-                <button className="showDetails">Mostrar Detalles</button> 
             </div> 
     )
 }
