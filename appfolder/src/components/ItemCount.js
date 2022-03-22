@@ -1,9 +1,8 @@
 import { useState } from "react"
 import { toast } from "react-toastify";
 
-function ItemCount(prop) {
+function ItemCount(prop,onAdd) {
     const [contador, setContador] = useState(prop.initial);
-    const stock = useState(prop.stock);
 
     const sumar = () => {
         if (contador >= (prop.stock)) {
@@ -37,7 +36,6 @@ function ItemCount(prop) {
                 </div>
                 <div className="contador__otherButtons">
                     <button onClick={agregarAlCarrito}>Agregar al carrito</button>
-
                 </div>
             </div>
         </>
