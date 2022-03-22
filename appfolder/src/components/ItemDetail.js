@@ -1,11 +1,21 @@
 import ItemCount from "./ItemCount"
-
-const onAdd = ()=>
-{
-  console.log("On Add desde el ItemDetail");
-}
+import { useState } from "react"
+import { toast } from "react-toastify";
 
 function ItemDetail({ detalle }) {
+  
+  const [seleccionado, setseleccionado] = useState(false);
+
+  const onAdd = (unidadSeleccionada) => {
+    
+    if (unidadSeleccionada != undefined)
+    {
+      setseleccionado(unidadSeleccionada)
+    }
+  }
+
+  {seleccionado? toast.success(`Se agrego ${detalle.nombre} al carrito`) : toast.error(`Todavia no se agrego ningun juego`)}
+  
   return (
     <div className="itemDetail">
       <img src={detalle.imagen}></img>
@@ -16,7 +26,7 @@ function ItemDetail({ detalle }) {
         <p><span>Precio:</span> $ {detalle.precio}</p>
         <p><span>Stock disponible:</span> {detalle.stock}</p>
       </div>
-      <ItemCount titulo={detalle.nombre} initial={1} stock={detalle.stock} onAdd={onAdd}/>
+      <ItemCount titulo={detalle.nombre} initial={1} stock={detalle.stock} onAdd={onAdd} />
     </div>
   )
 }
