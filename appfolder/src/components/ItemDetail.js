@@ -5,16 +5,22 @@ import { toast } from "react-toastify";
 function ItemDetail({ detalle }) {
   
   const [seleccionado, setseleccionado] = useState(false);
-
+  
   const onAdd = (unidadSeleccionada) => {
     
-    if (unidadSeleccionada != undefined)
+    if ((unidadSeleccionada != undefined) && (unidadSeleccionada > 1))
     {
       setseleccionado(unidadSeleccionada)
+      toast.success(`Se agregaron ${unidadSeleccionada} copias de ${detalle.nombre} al carrito`)
+    }
+    else if (unidadSeleccionada === 1)
+    {
+      setseleccionado(unidadSeleccionada)
+      toast.success(`Se agrego ${unidadSeleccionada} copia de ${detalle.nombre} al carrito`)
     }
   }
 
-  {seleccionado? toast.success(`Se agrego ${detalle.nombre} al carrito`) : toast.error(`Todavia no se agrego ningun juego`)}
+  {seleccionado? toast(`Se agrego un juego`) : toast.error(`Todavia no se agrego ningun juego`)}
   
   return (
     <div className="itemDetail">
