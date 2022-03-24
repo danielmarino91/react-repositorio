@@ -1,5 +1,4 @@
-import { useState, useContext } from "react"
-import { contexto } from "./CartContext"
+import { useState } from "react"
 
 function ItemCount({ title, initial, stock, onAdd  }) {
     const [contador, setContador] = useState(initial);

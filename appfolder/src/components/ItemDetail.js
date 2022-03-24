@@ -1,8 +1,7 @@
 import ItemCount from "./ItemCount"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { toast } from "react-toastify";
 import { NavLink} from "react-router-dom"
-import { useContext } from "react"
 import { contexto } from "./CartContext"
 
 function ItemDetail({ detalle }) {
@@ -38,7 +37,7 @@ function ItemDetail({ detalle }) {
         <p><span>Stock disponible:</span> {detalle.stock}</p>
       </div>
       {seleccionado? null : <ItemCount title={detalle.nombre} initial={1} stock={detalle.stock} onAdd={onAdd} />}
-      {seleccionado? <div className="goCart"><NavLink to="/carrito"><button onClick={addItem}>Agregar al carrito</button></NavLink></div> : null }
+      {seleccionado? <div className="goCart"><NavLink to="/carrito"><button onClick={addItem(detalle.id, detalle.nombre, detalle.precio, detalle.imagen, seleccionado)}>Agregar al carrito</button></NavLink></div> : null }
     </div>
   )
 }

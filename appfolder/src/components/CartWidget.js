@@ -2,7 +2,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useContext } from "react"
 import { contexto } from "./CartContext"
 
-function CartWidget(number) {
+function CartWidget() {
 
     const resultado = useContext(contexto)
     const itemCartNumber = resultado.total

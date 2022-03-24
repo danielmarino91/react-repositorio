@@ -1,49 +1,35 @@
-import React from 'react'
-import { createContext, useState } from "react"
+import { React, createContext, useState } from "react"
 export const contexto = createContext()
 const { Provider } = contexto
 
 const CartContext = ({ children }) => {
 
-    const [cart, setCart] = useState([])
-    const [total, setTotal] = useState (0)
+    const [Cart, setCart] = useState([])
+    const [Total, setTotal] = useState(0)
 
-    const addItem = (product, quantity)=> {
-        
-        // if (isInCart())
-        // {
-        //     cart.find()
-        // }
-        // else
-        // {
-            cart.push("product")
-        //     setTotal(total + product.precio)
-        // }
+    const addItem = (id, item, precio, imagen, stock) => {
+        const nuevoProducto = Cart.push({ id: id, nombre: item, precio: precio, imagen: imagen, stock: stock })
+        console.log(nuevoProducto, Cart)
     }
-    
-    const removeItem = ()=> {
-        console.log("Funciono removeItem")
+
+    const removeItem = (id) => {
 
     }
-    
-    const clear = ()=> {
-        console.log("Funciono el clear")
+
+    const emptyCart = () => {
         setCart([])
     }
 
-    const isInCart = ()=> {
-        
-        //recorre carrito en busca de id
-        //devuelve true si el producto existe
-        //si lo encuentra devuelve true, sino false 
+    const isInCart = (id) => {
+
     }
 
     const contextValue = {
-        cart : cart,
-        total: total,
+        cart: Cart,
+        total: Total,
         addItem: addItem,
         removeItem: removeItem,
-        clear: clear
+        emptyCart: emptyCart
     }
 
     return (
