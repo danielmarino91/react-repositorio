@@ -1,10 +1,9 @@
 import { useState } from "react"
-import { NavLink } from "react-router-dom"
 
 function ItemCount(prop) {
     const [contador, setContador] = useState(prop.initial);
 
-    const sumar = (e) => {
+    const sumar = () => {
         if (contador >= (prop.stock)) {
             setContador(contador + 0)
         }
@@ -13,7 +12,7 @@ function ItemCount(prop) {
         }
     }
 
-    const restar = (e) => {
+    const restar = () => {
         if (contador <= 1) {
             setContador(contador + 0)
         }
@@ -22,7 +21,7 @@ function ItemCount(prop) {
         }
     }
 
-    const agregarAlCarrito = (e) => {
+    const agregarAlCarrito = () => {
         {prop.onAdd(contador)}
     }
 
@@ -36,7 +35,6 @@ function ItemCount(prop) {
                 </div>
                 <div className="contador__otherButtons">
                     <button onClick={agregarAlCarrito}>Agregar al carrito</button>
-                    <button><NavLink to="/carrito">Terminar compra</NavLink></button>
                 </div>
             </div>
         </>

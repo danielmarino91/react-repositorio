@@ -38,6 +38,12 @@ a
     text-decoration: none;
 }
 
+a:visited
+{
+    color: $main-color;
+}
+
+
 button
 {
     cursor: pointer;

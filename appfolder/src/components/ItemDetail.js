@@ -1,6 +1,7 @@
 import ItemCount from "./ItemCount"
 import { useState } from "react"
 import { toast } from "react-toastify";
+import { NavLink} from "react-router-dom"
 
 function ItemDetail({ detalle }) {
   
@@ -20,7 +21,7 @@ function ItemDetail({ detalle }) {
     }
   }
 
-  {seleccionado? toast(`Se agrego un juego`) : toast.error(`Todavia no se agrego ningun juego`)}
+  {seleccionado? toast(`Se agrego un juego, ya se puede ir al carrito`) : toast.error(`Todavia no se agrego ningun juego`)}
   
   return (
     <div className="itemDetail">
@@ -32,8 +33,8 @@ function ItemDetail({ detalle }) {
         <p><span>Precio:</span> $ {detalle.precio}</p>
         <p><span>Stock disponible:</span> {detalle.stock}</p>
       </div>
-      <ItemCount titulo={detalle.nombre} initial={1} stock={detalle.stock} onAdd={onAdd} />
-      
+      {seleccionado? null : <ItemCount titulo={detalle.nombre} initial={1} stock={detalle.stock} onAdd={onAdd} />}
+      {seleccionado? <div className="goCart"><button><NavLink to="/carrito">Terminar compra</NavLink></button></div> : null }
     </div>
   )
 }
