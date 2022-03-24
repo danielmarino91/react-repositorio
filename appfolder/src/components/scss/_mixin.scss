@@ -1,14 +1,43 @@
 @mixin countButtonStyle
 {
-    padding: 0.2rem;
-    margin: 0.5rem;
     font-size: 2rem;
     color: $main-color;
     border: none;
-    
+    padding: 1rem;
+    margin: 0rem;
+    border-radius: 0px;
 }
 
 @mixin boxShadow
 {
     box-shadow: 2px 2px 10px black;
+}
+
+//buttonStyle
+@mixin buttonStyle
+{
+    transition: border 0.2s, color 0.2s, background-color 0.2s;
+    padding: 0.2rem;
+    margin: 0.5rem;
+    font-size: 2rem;
+    color: #f34213;
+    border: none;
+    font-size: 1rem;
+    border: 2px solid #f34213;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: #212529;
+}
+
+@mixin buttonStyleHover
+{
+    color: white ;
+    background-color: $main-color;
+}
+
+@mixin buttonStyleActive
+{
+    color: black;
+    background-color: white;
+    border: 2px solid white;
 }

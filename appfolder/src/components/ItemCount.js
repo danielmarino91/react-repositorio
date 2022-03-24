@@ -1,10 +1,11 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { contexto } from "./CartContext"
 
-function ItemCount(prop) {
-    const [contador, setContador] = useState(prop.initial);
+function ItemCount({ title, initial, stock, onAdd  }) {
+    const [contador, setContador] = useState(initial);
 
     const sumar = () => {
-        if (contador >= (prop.stock)) {
+        if (contador >= (stock)) {
             setContador(contador + 0)
         }
         else {
@@ -22,22 +23,18 @@ function ItemCount(prop) {
     }
 
     const agregarAlCarrito = () => {
-        {prop.onAdd(contador)}
+        {onAdd(contador)}
     }
 
     return (
-        <>
             <div className="contador">
                 <div className="contador__buttons">
                     <button onClick={restar}>-</button>
                     <p>{contador}</p>
                     <button onClick={sumar}>+</button>
                 </div>
-                <div className="contador__otherButtons">
-                    <button onClick={agregarAlCarrito}>Agregar al carrito</button>
-                </div>
+                    <button onClick={agregarAlCarrito}>Añadir {contador} {title}</button>
             </div>
-        </>
     );
 }
 
