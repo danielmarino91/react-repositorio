@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { NavLink } from "react-router-dom"
 
 function ItemCount(prop) {
     const [contador, setContador] = useState(prop.initial);
@@ -35,6 +36,7 @@ function ItemCount(prop) {
                 </div>
                 <div className="contador__otherButtons">
                     <button onClick={agregarAlCarrito}>Agregar al carrito</button>
+                    <button><NavLink to="/carrito">Terminar compra</NavLink></button>
                 </div>
             </div>
         </>

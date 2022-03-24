@@ -33,6 +33,7 @@ function ItemDetail({ detalle }) {
         <p><span>Stock disponible:</span> {detalle.stock}</p>
       </div>
       <ItemCount titulo={detalle.nombre} initial={1} stock={detalle.stock} onAdd={onAdd} />
+      
     </div>
   )
 }
