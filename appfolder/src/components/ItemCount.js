@@ -21,7 +21,7 @@ function ItemCount({ title, initial, stock, onAdd  }) {
         }
     }
 
-    const agregarAlCarrito = () => {
+    const confirmarCompra = () => {
         {onAdd(contador)}
     }
 
@@ -32,7 +32,7 @@ function ItemCount({ title, initial, stock, onAdd  }) {
                     <p>{contador}</p>
                     <button onClick={sumar}>+</button>
                 </div>
-                    <button onClick={agregarAlCarrito}>Añadir {contador} {title}</button>
+                    <button onClick={confirmarCompra}>Añadir {contador} {title}</button>
             </div>
     );
 }

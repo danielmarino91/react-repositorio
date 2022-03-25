@@ -23,8 +23,6 @@ function ItemDetail({ detalle }) {
       toast.success(`Se agrego ${unidadSeleccionada} copia de ${detalle.nombre} al carrito`)
     }
   }
-
-  {seleccionado? toast(`Se agrego un juego, ya se puede ir al carrito`) : toast.error(`Todavia no se agrego ningun juego`)}
   
   return (
     <div className="itemDetail">
@@ -37,7 +35,7 @@ function ItemDetail({ detalle }) {
         <p><span>Stock disponible:</span> {detalle.stock}</p>
       </div>
       {seleccionado? null : <ItemCount title={detalle.nombre} initial={1} stock={detalle.stock} onAdd={onAdd} />}
-      {seleccionado? <div className="goCart"><NavLink to="/carrito"><button onClick={addItem(detalle.id, detalle.nombre, detalle.precio, detalle.imagen, seleccionado)}>Agregar al carrito</button></NavLink></div> : null }
+      {seleccionado? <div className="goCart"><NavLink to="/carrito"><button onClick={()=>{addItem(detalle.id, detalle.nombre, detalle.precio, detalle.imagen, seleccionado)}}>Agregar al carrito</button></NavLink></div> : null }
     </div>
   )
 }

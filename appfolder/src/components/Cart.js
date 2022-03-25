@@ -6,9 +6,10 @@ import { contexto } from "./CartContext"
 const Cart = () => {
 
   const resultado = useContext(contexto)
-  const emptyCart = resultado.emptyCart
+  const { emptyCart, removeItem, cart } = resultado
+  
 
-  const carrito = resultado.cart
+  const carrito = cart
 
   if (carrito == 0) {
     return (
@@ -25,19 +26,13 @@ const Cart = () => {
         <div className="itemInCart__details">
           <h3>{item.nombre}</h3>
           <h3>${item.precio}</h3>
+          <h3>Cantidad: {item.stock}</h3>
         </div>
-        <button>Borrar</button></div>))}
+        <button onClick={()=>{removeItem(item.id)}}>Borrar</button></div>))}
         <div><button className="btnClearCart" onClick={emptyCart}>Limpiar carrito</button></div>
       </>
     )
   }
-
-  // return (
-  //   <>
-  //   <div className="cartStyle"><p>No hay productos agregados al carrito</p><BsFillCartXFill /></div>
-  //   <div><button className="btnClearCart" onClick={clear}>Limpiar carrito</button></div>
-  //   </>
-  // )
 }
 
 export default Cart

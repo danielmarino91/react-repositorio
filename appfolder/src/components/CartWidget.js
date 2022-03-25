@@ -5,7 +5,7 @@ import { contexto } from "./CartContext"
 function CartWidget() {
 
     const resultado = useContext(contexto)
-    const itemCartNumber = resultado.total
+    const itemCartNumber = resultado.cart.length
 
     return (
         <div className="cartWidget"><AiOutlineShoppingCart /><p>{itemCartNumber}</p></div>
