@@ -8,9 +8,15 @@ const CartContext = ({ children }) => {
     const [Total, setTotal] = useState(0)
 
     const addItem = (id, item, precio, imagen, stock) => {
-        const nuevoProducto = Cart.push({ id: id, nombre: item, precio: precio, imagen: imagen, stock: stock })
-        setTotal(Cart.length)
+        const productoEncontrado = Cart.find(e => e.id === id)
 
+        // if()
+        // {}
+        // else
+        // {
+        setCart([...Cart, { id, item, precio, imagen, stock }])
+        setTotal(Cart.length)
+        // }
     }
 
     const removeItem = (id) => {
@@ -23,7 +29,7 @@ const CartContext = ({ children }) => {
     }
 
     const isInCart = (id) => {
-        
+
     }
 
     const contextValue = {

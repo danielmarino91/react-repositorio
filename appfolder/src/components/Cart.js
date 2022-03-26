@@ -24,7 +24,7 @@ const Cart = () => {
       {carrito.map(item => (<div className="itemInCart">
         <img src={item.imagen}></img>
         <div className="itemInCart__details">
-          <h3>{item.nombre}</h3>
+          <h3>{item.item}</h3>
           <h3>${item.precio}</h3>
           <h3>Cantidad: {item.stock}</h3>
         </div>

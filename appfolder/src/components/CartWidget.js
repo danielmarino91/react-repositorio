@@ -6,7 +6,6 @@ function CartWidget() {
 
     const resultado = useContext(contexto)
     const itemCartNumber = resultado.cart.length
-    console.log(itemCartNumber)
 
     return (
         <div className="cartWidget"><AiOutlineShoppingCart /><p>{itemCartNumber}</p></div>

@@ -28,7 +28,7 @@ function ItemDetail({ detalle }) {
     <div className="itemDetail">
       <img src={detalle.imagen}></img>
       <div className="itemDetail__detail">
-        <p className="itemDetail__title">{detalle.nombre}</p>
+        <p className="itemDetail__title">{detalle.item}</p>
         <p><span>Informacion:</span> {detalle.detalle}</p>
         <p><span>Categoria:</span> {detalle.categoria}</p>
         <p><span>Precio:</span> $ {detalle.precio}</p>
