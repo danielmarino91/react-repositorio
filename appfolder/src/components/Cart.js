@@ -6,8 +6,7 @@ import { contexto } from "./CartContext"
 const Cart = () => {
 
   const resultado = useContext(contexto)
-  const { emptyCart, removeItem, cart } = resultado
-  
+  const { emptyCart, removeItem, cart, priceTotal } = resultado
 
   const carrito = cart
 
@@ -21,14 +20,14 @@ const Cart = () => {
   else if (carrito != 0) {
     return (
       <>
-      {carrito.map(item => (<div className="itemInCart">
-        <img src={item.imagen}></img>
-        <div className="itemInCart__details">
-          <h3>{item.item}</h3>
-          <h3>${item.precio}</h3>
-          <h3>Cantidad: {item.stock}</h3>
-        </div>
-        <button onClick={()=>{removeItem(item.id)}}>Borrar</button></div>))}
+        {carrito.map(item => (<div className="itemInCart" key={`uniqueID${item.id}`}>
+          <img src={item.imagen}></img>
+          <div className="itemInCart__details">
+            <h3>{item.item}</h3>
+            <h3>${item.precio}</h3>
+            <h3>Cantidad: {item.stock}</h3>
+          </div>
+          <button onClick={() => { removeItem(item.id) }}>Borrar</button></div>))}
         <div><button className="btnClearCart" onClick={emptyCart}>Limpiar carrito</button></div>
       </>
     )

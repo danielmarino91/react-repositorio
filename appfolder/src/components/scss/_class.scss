@@ -434,3 +434,18 @@
 {
     @include buttonStyleActive;
 }
+
+.buyAll
+{
+    @include buttonStyle
+}
+
+.buyAll:hover
+{
+    @include buttonStyleHover
+}
+
+.buyAll:active
+{
+    @include buttonStyleActive
+}

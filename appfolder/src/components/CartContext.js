@@ -14,7 +14,7 @@ const CartContext = ({ children }) => {
         if (index > -1) {
             const oldStock = Cart[index].stock;
             Cart.splice(index, 1);
-            setCart([...Cart, { id, item, imagen, stock: stock + oldStock, precio: precio * (stock + oldStock)  }]);
+            setCart([...Cart, { id, item, imagen, stock: stock + oldStock, precio: precio * (stock + oldStock) }]);
             setTotal(Cart.length)
         } else {
             setCart([...Cart, { id, item, precio: precio * stock, imagen, stock }])
@@ -36,7 +36,7 @@ const CartContext = ({ children }) => {
         total: Total,
         addItem: addItem,
         removeItem: removeItem,
-        emptyCart: emptyCart
+        emptyCart: emptyCart,
     }
 
     return (
