@@ -9,11 +9,8 @@ const CartContext = ({ children }) => {
 
     const addItem = (id, item, precio, imagen, stock) => {
         const nuevoProducto = Cart.push({ id: id, nombre: item, precio: precio, imagen: imagen, stock: stock })
+        setTotal(Cart.length)
 
-    }
-
-    const confirmCart = ()=> {
-        
     }
 
     const removeItem = (id) => {

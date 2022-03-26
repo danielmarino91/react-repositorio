@@ -354,29 +354,35 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    align-self: flex-start;
     padding: 1rem;
     margin: 1rem auto;
-    width: 98%;
+    width: 500px;
+    height: 250px;
     background-color: $color-7;
     height: max-content;
     align-self: flex-start;
+    @include boxShadow;
 
     .itemInCart__details
     {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
+        align-self: left;
 
         h3
         {
             color: $main-color;
-            font-size: 2rem;
-            padding: 0.5rem 1rem;
+            font-size: 1.4rem;
+            padding: 0.3rem 1rem;
+            
         }
     }
 
     img
     {
-        width: 5%;
+        width: 30%;
         object-fit: cover;
         border: 2px solid $main-color;
     }
