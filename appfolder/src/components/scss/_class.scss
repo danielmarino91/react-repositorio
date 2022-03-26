@@ -106,7 +106,7 @@
     }
 }
 
-.contador
+.counter
 {
     display: flex;
     flex-direction: column;
@@ -121,7 +121,7 @@
         color: white;
     }
 
-    .contador__buttons
+    .counter__buttons
     {
         display: flex;
         justify-content: space-between;
@@ -306,14 +306,31 @@
     }
 }
 
-.gameGenreBadge
+.gameBadge
 {
-    background-color: $color-7;
-    color: $main-color;
-    border-radius: 20px;
-    font-size: 1.5rem;
-    margin: 2rem;
-    padding: 1rem;
+    display: flex;
+
+    .gameBadge__price
+    {
+        margin: 1rem;
+        background-color: $main-color;
+        color: $color-7;
+        border-radius: 20px;
+        font-size: 1.5rem;
+        margin: 1rem 0.5rem;
+        padding: 1rem;
+    }
+    
+    .gameBadge__genre
+    {
+        margin: 1rem;
+        background-color: $color-7;
+        color: $main-color;
+        border-radius: 20px;
+        font-size: 1.5rem;
+        margin: 1rem 0.5rem;
+        padding: 1rem;
+    }
 }
 
 .stockAvaible

@@ -8,15 +8,18 @@ const CartContext = ({ children }) => {
     const [Total, setTotal] = useState(0)
 
     const addItem = (id, item, precio, imagen, stock) => {
-        const productoEncontrado = Cart.find(e => e.id === id)
 
-        // if()
-        // {}
-        // else
-        // {
-        setCart([...Cart, { id, item, precio, imagen, stock }])
-        setTotal(Cart.length)
-        // }
+        const index = Cart.findIndex(e => e.id === id);
+
+        if (index > -1) {
+            const oldStock = Cart[index].stock;
+            Cart.splice(index, 1);
+            setCart([...Cart, { id, item, imagen, stock: stock + oldStock, precio: precio * (stock + oldStock)  }]);
+            setTotal(Cart.length)
+        } else {
+            setCart([...Cart, { id, item, precio: precio * stock, imagen, stock }])
+            setTotal(Cart.length)
+        };
     }
 
     const removeItem = (id) => {
@@ -26,10 +29,6 @@ const CartContext = ({ children }) => {
 
     const emptyCart = () => {
         setCart([])
-    }
-
-    const isInCart = (id) => {
-
     }
 
     const contextValue = {
