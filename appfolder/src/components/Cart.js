@@ -6,7 +6,7 @@ import { contexto } from "./CartContext"
 const Cart = () => {
 
   const resultado = useContext(contexto)
-  const { emptyCart, removeItem, cart, priceTotal } = resultado
+  const { emptyCart, removeItem, cart } = resultado
 
   const carrito = cart
 
@@ -27,7 +27,7 @@ const Cart = () => {
             <h3>${item.precio}</h3>
             <h3>Cantidad: {item.stock}</h3>
           </div>
-          <button onClick={() => { removeItem(item.id) }}>Borrar</button></div>))}
+          <button onClick={() => { removeItem(item.id, item.stock) }}>Borrar</button></div>))}
         <div><button className="btnClearCart" onClick={emptyCart}>Limpiar carrito</button></div>
       </>
     )
