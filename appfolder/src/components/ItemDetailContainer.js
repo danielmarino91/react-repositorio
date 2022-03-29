@@ -13,7 +13,6 @@ function ItemDetailContainer() {
   const juegos = JUEGOS[id];
 
   useEffect(() => {
-
     const productDetailPromise = new Promise((resolve) => {
       setTimeout(() => {
         resolve(juegos)

@@ -33,6 +33,7 @@ const CartContext = ({ children }) => {
 
     const emptyCart = () => {
         setCart([])
+        setQuantity(0)
     }
 
     const contextValue = {
