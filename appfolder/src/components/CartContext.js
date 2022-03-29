@@ -16,24 +16,26 @@ const CartContext = ({ children }) => {
             const oldStock = Cart[index].stock;
             Cart.splice(index, 1);
             setCart([...Cart, { id, item, imagen, stock: stock + oldStock, precio: precio * (stock + oldStock) }]);
-            setTotal(Cart.length)
             setQuantity(Quantity + stock)
+            setTotal(Total + (precio * stock))
         } else {
             setCart([...Cart, { id, item, precio: precio * stock, imagen, stock }])
-            setTotal(Cart.length)
             setQuantity(Quantity + stock)
+            setTotal(Total + (precio * stock))
         };
     }
 
-    const removeItem = (id, stock) => {
+    const removeItem = (id, stock, precio) => {
         const items = Cart.filter((i) => i.id !== id);
         setCart(items);
         setQuantity(Quantity - stock)
+        setTotal(Total - precio)
     }
 
     const emptyCart = () => {
         setCart([])
         setQuantity(0)
+        setTotal(0)
     }
 
     const contextValue = {

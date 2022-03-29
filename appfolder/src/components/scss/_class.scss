@@ -96,13 +96,18 @@
 
 .cartWidget
 {
-    display:flex;
-    color: white;
-    font-size: 2rem;
 
-    p
+    .cartWidget__widget
     {
-        margin: 0rem 1rem;
+        display:flex;
+        color: white;
+        font-size: 2rem;
+        align-self: right;
+
+        p
+        {
+            margin: 0rem 1rem;
+        }
     }
 }
 

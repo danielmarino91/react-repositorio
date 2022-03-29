@@ -27,7 +27,7 @@ const Cart = () => {
             <h3><span>Precio: </span>${item.precio}</h3>
             <h3><span>Cantidad: </span>{item.stock}</h3>
           </div>
-          <button onClick={() => { removeItem(item.id, item.stock) }}>Borrar</button></div>))}
+          <button onClick={() => { removeItem(item.id, item.stock, item.precio) }}>Borrar</button></div>))}
         <div><button className="btnClearCart" onClick={emptyCart}>Limpiar carrito</button></div>
       </>
     )
