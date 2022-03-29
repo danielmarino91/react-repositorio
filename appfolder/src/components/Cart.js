@@ -23,9 +23,9 @@ const Cart = () => {
         {carrito.map(item => (<div className="itemInCart" key={`uniqueID${item.id}`}>
           <img src={item.imagen}></img>
           <div className="itemInCart__details">
-            <h3>{item.item}</h3>
-            <h3>${item.precio}</h3>
-            <h3>Cantidad: {item.stock}</h3>
+            <h3><span>Titulo: </span>{item.item}</h3>
+            <h3><span>Precio: </span>${item.precio}</h3>
+            <h3><span>Cantidad: </span>{item.stock}</h3>
           </div>
           <button onClick={() => { removeItem(item.id, item.stock) }}>Borrar</button></div>))}
         <div><button className="btnClearCart" onClick={emptyCart}>Limpiar carrito</button></div>

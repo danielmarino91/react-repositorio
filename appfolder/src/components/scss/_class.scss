@@ -178,27 +178,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     margin: 1rem;
-    width: 400px;
+    width: 375px;
+    height: 570px;
     background-color: $background-color-2;
     @include boxShadow; 
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s, border 0.3s;
     transform: scale(1,1);
+    border: 2px solid $color-7;
 
     h3
     {
         font-size: 1.5rem;
         color: $main-color;
         padding: 1rem;
-        width: 100%
     }
 
     img
     {
         border: 3px solid $color-7;
-        margin: 1rem;
-        width: 80%;
+        max-width: 300px;
+        
     }
 
     .itemStyle__detail
@@ -211,6 +213,7 @@
 .itemStyle:hover
 {
     transform: scale(1.02,1.02);
+    border: 2px solid $main-color;
 }
 
 .itemListStyle
@@ -287,9 +290,9 @@
     flex-direction: column ;
     align-items: center;
     justify-content: center;
-    margin: 1rem auto;
+    margin: 6rem auto;
     width: 600px;
-    height: 650px;
+    height: 400px;
 
     svg
     {
@@ -309,6 +312,7 @@
 .gameBadge
 {
     display: flex;
+    margin: 1.2rem 0rem;
 
     .gameBadge__price
     {
@@ -317,7 +321,7 @@
         color: $color-7;
         border-radius: 20px;
         font-size: 1.5rem;
-        margin: 1rem 0.5rem;
+        margin: 0rem 0.5rem;
         padding: 1rem;
     }
     
@@ -328,14 +332,14 @@
         color: $main-color;
         border-radius: 20px;
         font-size: 1.5rem;
-        margin: 1rem 0.5rem;
+        margin: 0rem 0.5rem;
         padding: 1rem;
     }
 }
 
 .stockAvaible
 {
-    padding: 2rem 1rem;
+    padding: 1.2rem;
     font-size: 1.5rem;
     background-color: $color-7;
     width: 100%;
@@ -369,16 +373,17 @@
 {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    align-self: flex-start;
+    justify-content: space-between;
     padding: 1rem;
     margin: 1rem auto;
-    width: 500px;
-    height: 250px;
+    width: 900px;
+    height: 200px;
     background-color: $color-7;
     height: max-content;
     align-self: flex-start;
+    transition: border 0.2s;
+    border: 2px solid $color-7;
     @include boxShadow;
 
     .itemInCart__details
@@ -386,19 +391,26 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        align-self: left;
+        justify-self: flex-start;
+        margin-right: auto;
+        margin-left: 1rem;
 
         h3
         {
-            color: $main-color;
+            color: $font-color;
             font-size: 1.4rem;
             padding: 0.3rem 1rem;
+
+            span
+            {
+                color: $main-color;
+            }
         }
     }
 
     img
     {
-        width: 30%;
+        width: 14%;
         object-fit: cover;
         border: 2px solid $main-color;
     }
@@ -418,6 +430,12 @@
         @include buttonStyleActive;
     }
 }
+
+.itemInCart:hover
+{
+    border: 2px solid $main-color;
+}
+
 
 .btnClearCart
 {
