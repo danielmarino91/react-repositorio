@@ -96,20 +96,33 @@
 
 .cartWidget
 {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    margin-right: 1rem;
+    font-size: rem;
+    transition: color 0.2s;
 
-    .cartWidget__widget
+    p
     {
-        display:flex;
-        color: white;
-        font-size: 2rem;
-        align-self: right;
+        font-size: 1.5rem;
+    }
 
-        p
-        {
-            margin: 0rem 1rem;
-        }
+    svg
+    {
+        margin-right: 0.5rem;
     }
 }
+
+.cartWidget:hover
+{
+    color: $main-color;
+}
+
+
+
 
 .counter
 {
@@ -471,4 +484,20 @@
 .buyAll:active
 {
     @include buttonStyleActive
+}
+
+.btnGoIndex
+{
+    @include buttonStyle;
+    margin: 1rem 0rem;
+}
+
+.btnGoIndex:hover
+{
+    @include buttonStyleHover;
+}
+
+.btnGoIndex:active
+{
+    @include buttonStyleActive;
 }

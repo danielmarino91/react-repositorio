@@ -6,12 +6,11 @@ function CartWidget() {
 
     const resultado = useContext(contexto)
     const itemCartNumber = resultado.quantity
-    const totalPrice = resultado.total
-
+    const totalPrice = resultado.total.toFixed(2);
 
     return (
         <>
-        { itemCartNumber > 0 ? <div className="cartWidget"><div className="cartWidget__widget"><AiOutlineShoppingCart /><p>{itemCartNumber}</p></div><p>Total: {totalPrice}</p></div> : null}
+        { itemCartNumber > 0 ? <div className="cartWidget"><AiOutlineShoppingCart /><p>{itemCartNumber} - ${totalPrice}</p></div> : null }
         </>
     )
 }

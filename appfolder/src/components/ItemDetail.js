@@ -35,7 +35,7 @@ function ItemDetail({ detalle }) {
         <p><span>Stock disponible:</span> {detalle.stock}</p>
       </div>
       {seleccionado? null : <ItemCount title={detalle.nombre} initial={1} stock={detalle.stock} onAdd={onAdd} />}
-      {seleccionado? <div className="goCart"><NavLink to="/carrito"><button onClick={()=>{addItem(detalle.id, detalle.nombre, detalle.precio, detalle.imagen, seleccionado)}}>Agregar al carrito</button></NavLink></div> : null }
+      {seleccionado? <div className="goCart"><NavLink to="/carrito"><button onClick={()=>{addItem(detalle.id, detalle.nombre, detalle.precio, detalle.imagen, seleccionado)}}>Terminar compra</button></NavLink></div> : null }
     </div>
   )
 }
