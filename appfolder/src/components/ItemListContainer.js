@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
+import { useParams } from "react-router-dom"
 import ItemList from './ItemList'
 import Loader from "./Loader"
-import { useParams } from "react-router-dom"
 import JUEGOS from "./db_juegos.json"
+import { db } from "./Firebase"
+import { getDocs, collection } from "firebase/firestore"
+
+
 
 function ItemListContainer() {
     const [productos, setProductos] = useState([])
@@ -13,6 +17,14 @@ function ItemListContainer() {
     const juegos = JUEGOS;
 
     useEffect(() => {
+
+        /* const juegosCollection = collection(db, "games")
+        const documentos = getDocs(juegosCollection)
+        
+        documentos
+        .then( (res)=>{res.forEach((documento)=>{console.log(documento.data())})})
+        .catch() */
+
         const productPromise = new Promise((resolve) => {
             setTimeout(() => {
                 resolve(juegos)

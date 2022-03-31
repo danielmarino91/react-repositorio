@@ -24,7 +24,7 @@
         "nombre": "DeathLoop",
         "link": "deathLoop",
         "imagen": "/assets/producto2.png",
-        "detalle": " Este título de aventura y disparos en primera persona te transporta a la isla donde en un ciclo interminable dos asesinos se enfrentan eternamente. ¿Podrás acabar con todos lo objetivos?",
+        "detalle": "Este título de aventura y disparos en primera persona te transporta a la isla donde en un ciclo interminable dos asesinos se enfrentan eternamente. ¿Podrás acabar con todos lo objetivos?",
         "precio": 10000,
         "categoria": "Shooter",
         "stock": 10
@@ -34,7 +34,7 @@
         "nombre": "Doom Eternal",
         "link": "doometernal",
         "imagen": "/assets/producto3.png",
-        "detalle": " Este título es la secuela de Doom, siendo que ahora el infierno se desata sobre la Tierra. Tu misión será detener el avance de la maldad que creaturas y demonios pretenden imponer en nuestro hogar, por lo que tus habilidades y las más poderosas armas serán puestas a prueba",
+        "detalle": "Este título es la secuela de Doom, siendo que ahora el infierno se desata sobre la Tierra. Tu misión será detener el avance de la maldad que creaturas y demonios pretenden imponer en nuestro hogar, por lo que tus habilidades y las más poderosas armas serán puestas a prueba",
         "precio": 3800,
         "categoria": "Shooter",
         "stock": 10
@@ -44,7 +44,7 @@
         "nombre": "GTA The Trilogy",
         "link": "gtathetrilogy",
         "imagen": "/assets/producto4.png",
-        "detalle": " Este título compilatorio trae de vuelta tres historias épicas de la franquicia: Grand Theft Auto: III, Grand Theft Auto: Vice City y Grand Theft Auto: San Andreas; en una versión actualizada para la nueva generación de consolas en aspectos gráficos como iluminación, texturas y demás",
+        "detalle": "Este título compilatorio trae de vuelta tres historias épicas de la franquicia: Grand Theft Auto: III, Grand Theft Auto: Vice City y Grand Theft Auto: San Andreas; en una versión actualizada para la nueva generación de consolas en aspectos gráficos como iluminación, texturas y demás",
         "precio": 12000,
         "categoria": "Accion",
         "stock": 10
@@ -54,7 +54,7 @@
         "nombre": "Guilty Gear Strive",
         "link": "guiltygearstrive",
         "imagen": "/assets/producto5.png",
-        "detalle": " Desarrollado por Arc System Works, Guilty Gear -Strive- es la más reciente entrega de la saga Guilty Gear, creada por Daisuke Ishiwatari en 1998. Se trata de una reconstrucción con varios de los elementos clásicos de la serie y representa la conclusión en la historia de Sol Badguy",
+        "detalle": "Desarrollado por Arc System Works, Guilty Gear -Strive- es la más reciente entrega de la saga Guilty Gear, creada por Daisuke Ishiwatari en 1998. Se trata de una reconstrucción con varios de los elementos clásicos de la serie y representa la conclusión en la historia de Sol Badguy",
         "precio": 10000,
         "categoria": "Peleas",
         "stock": 10
@@ -116,7 +116,7 @@
         "imagen": "/assets/producto11.png",
         "detalle": " La octava entrega de la franquicia Resident Evil, con perspectiva en primera persona, te pone nuevamente en el papel de Ethan, quien se trasladará una aldea nevada donde eventos sobrenaturales harán que el miedo a lo desconocido cobre una nueva dimensión",
         "precio": 10000,
-        "categoria": "Survival Horror",
+        "categoria": "Shooter",
         "stock": 10
     },
     {
