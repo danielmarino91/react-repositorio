@@ -10,7 +10,7 @@ function Links() {
             <NavLink to="/categoria/Peleas">Peleas</NavLink>
             <NavLink to="/categoria/Plataformas">Plataformas</NavLink>
             <NavLink to="/categoria/Aventura">Aventura</NavLink>
-        </ul >
+        </ul>
     )
 }
 
