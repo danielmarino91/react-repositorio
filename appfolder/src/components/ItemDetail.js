@@ -24,15 +24,22 @@ function ItemDetail({ detalle }) {
 
   return (
     <div className="itemDetail">
-      <img src={detalle.imagen}></img>
-      <div className="itemDetail__detail">
-        <p className="itemDetail__title">{detalle.item}</p>
-        <p><span>Informacion:</span> {detalle.detalle}</p>
-        <p><span>Categoria:</span> {detalle.categoria}</p>
-        <p><span>Precio:</span> $ {detalle.precio}</p>
-        <p><span>Stock disponible:</span> {detalle.stock}</p>
+      <div className="itemDetail__image">
+        <img src={detalle.imagen}></img>
       </div>
-      {seleccionado ? <div className="goCart"><NavLink to="/carrito"><button onClick={() => { addItem(detalle.id, detalle.nombre, detalle.precio, detalle.imagen, seleccionado) }}>Terminar compra</button></NavLink></div> : <ItemCount title={detalle.nombre} initial={1} stock={detalle.stock} onAdd={onAdd} />}
+
+      <div className="itemDetail__detail">
+        <p className="itemDetail__detail--title">{detalle.nombre}</p>
+        <p className="itemDetail__detail--price">${detalle.precio}</p>
+        <p><span>Información:</span> {detalle.detalle}</p>
+        <p><span>Categoría:</span> {detalle.categoria}</p>
+        <p><span>Plataformas:</span> {detalle.plataforma}</p>
+        
+      </div>
+
+      <div className="itemDetail__buttons">
+        {seleccionado ? <div className="goCart"><NavLink to="/carrito"><button onClick={() => { addItem(detalle.id, detalle.nombre, detalle.precio, detalle.imagen, seleccionado) }}>Terminar compra</button></NavLink></div> : <><span><span>Stock disponible:</span> {detalle.stock}</span><ItemCount title={detalle.nombre} initial={1} stock={detalle.stock} onAdd={onAdd} /></>}
+      </div>
     </div>
   )
 }

@@ -1,20 +1,30 @@
-body
-{
-    background-color: $background-color;    
+body {
+    background-color: $background-color;
 }
 
-main
-{
+body::-webkit-scrollbar {
+    width: 20px;
+}
+
+body::-webkit-scrollbar-track {
+    background: $color-8;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: $main-color;
+    border: 5px solid $color-8;  
+    border-radius: 40px;
+}
+
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     margin-bottom: auto;
-    margin-top: 1rem;
 }
 
-footer
-{
+footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,28 +34,23 @@ footer
     text-align: center;
 }
 
-h2
-{
+h2 {
     font-size: 2rem;
     margin: 1rem;
 }
 
-a
-{
+a {
     text-decoration: none;
 }
 
-a:visited
-{
+a:visited {
     color: white;
 }
 
-a:active
-{
+a:active {
     color: black;
 }
 
-button
-{
+button {
     cursor: pointer;
 }

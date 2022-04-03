@@ -31,26 +31,6 @@ function ItemListContainer() {
             .finally(() => setLoading(false))
     }, [idCategoria])
 
-    //DB LOCAL
-    //     const productPromise = new Promise((resolve) => {
-    //         setTimeout(() => {
-    //             resolve(juegos)
-    //         }, 900);
-    //     })
-    //     productPromise
-    //         .then((data) => {
-    //             if (idCategoria) {
-    //                 const juegosEncontrados = juegos.filter(data => data.categoria == idCategoria)
-    //                 setProductos(juegosEncontrados)
-    //             }
-    //             else {
-    //                 setProductos(data)
-    //             }
-    //         })
-    //         .catch((err) => { toast.error(err) })
-    //         .finally(() => { setLoading(false) })
-    // }, [idCategoria])
-
     return (
         <>
             {Loading ? <Loader /> : <ItemList productos={productos} />}
