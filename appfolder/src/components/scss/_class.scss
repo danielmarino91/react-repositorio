@@ -1,112 +1,105 @@
-.navbar {
+.navbar 
+{
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: $navbar-color;
     padding: 1rem;
 
-    ul {
+    ul 
+    {
         display: flex;
         align-items: center;
         list-style: none;
         margin-left: 1rem;
     }
 
-    li {
+    li 
+    {
         margin: 0rem 0.5rem;
     }
 
-    a {
+    a 
+    {
         transition: color 0.2s;
         text-decoration: none;
         color: $font-color;
         font-size: 1.2rem;
     }
 
-    a:hover {
+    a:hover 
+    {
         color: $main-color;
     }
 }
 
-.links {
+.links 
+{
     display: flex;
     align-items: center;
     list-style: none;
     margin: 1rem;
 
-    .active {
+    .active 
+    {
         border-bottom: 2px solid $main-color;
         color: $main-color;
     }
 
-    a {
+    a 
+    {
         transition: color 0.2s;
         text-decoration: none;
-        color: white;
         padding: 0.5rem;
         margin: 0.5rem;
     }
 
-    a:hover {
+    a:hover 
+    {
         color: $main-color;
     }
 }
 
-.button {
+.button 
+{
     @include buttonStyle
 }
 
-.buttonContainer {
+.buttonContainer 
+{
     display: flex;
 }
 
-.itemList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 2rem;
-
-    li {
-        list-style: none;
-    }
-
-    a {
-        text-decoration: none;
-        color: white;
-    }
-
-    a:hover {
-        color: $main-color;
-    }
-}
-
-.cartWidget {
+.cartWidget 
+{
     display: flex;
     align-items: center;
-    color: white;
+    color: $cartWidgetFontColor;
     font-size: 2rem;
     margin-bottom: 0.5rem;
     margin-right: 1rem;
     font-size: rem;
     transition: color 0.2s;
 
-    p {
+    p 
+    {
         font-size: 1.5rem;
     }
 
-    svg {
+    svg 
+    {
         margin-right: 0.5rem;
     }
 }
 
-.cartWidget:hover {
+.cartWidget:hover 
+{
     color: $main-color;
 }
 
 
-
-
-.counter {
+.counter 
+{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,12 +107,14 @@
     margin: 0rem auto;
     padding: 1rem;
 
-    p {
+    p 
+    {
         font-size: 1.5rem;
-        color: white;
+        color: $countNumberColor;
     }
 
-    .counter__buttons {
+    .counter__buttons 
+    {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -129,21 +124,24 @@
         margin: 1rem 0rem;
         background-color: $navbar-color;
 
-        button {
+        button 
+        {
             @include buttonStyle;
             margin: 0rem;
             border-radius: 0;
             border: none;
         }
 
-        button:hover {
+        button:hover 
+        {
             @include buttonStyleHover;
             margin: 0rem;
             border-radius: 0;
             border: none;
         }
 
-        button:active {
+        button:active 
+        {
             @include buttonStyleActive;
             margin: 0rem;
             border-radius: 0;
@@ -151,20 +149,24 @@
         }
     }
 
-    button {
+    button 
+    {
         @include buttonStyle
     }
 
-    button:hover {
+    button:hover 
+    {
         @include buttonStyleHover
     }
 
-    button:active {
+    button:active 
+    {
         @include buttonStyleActive
     }
 }
 
-.itemStyle {
+.itemStyle 
+{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -174,42 +176,41 @@
     margin: 1rem;
     width: 375px;
     height: 570px;
-    background-color: $background-color-2;
+    background-color: $itemBackgroundColor;
     cursor: pointer;
-    border: 2px solid $color-7;
+    border: 2px solid $itemBorderColor;
     @include boxShadow;
 
-    h3 {
+    h3 
+    {
         font-size: 1.5rem;
         color: $main-color;
         padding: 1rem;
     }
 
-    img {
-        border: 3px solid $color-7;
+    img 
+    {
+        border: 3px solid $imageBorderColor;
         max-width: 300px;
-
-    }
-
-    .itemStyle__detail {
-        color: white;
-        font-size: 1.1rem;
     }
 }
 
-.itemStyle:hover {
+.itemStyle:hover 
+{
     transform: scale(1.02, 1.02);
     border: 2px solid $main-color;
 }
 
-.itemListStyle {
+.itemListStyle 
+{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     margin: 2rem;
 }
 
-.itemDetail {
+.itemDetail 
+{
     display: flex;
     flex-flow: row;
     justify-content: space-between;
@@ -217,7 +218,7 @@
     padding: 0.5rem;
     width: 95%;
     margin: 1rem auto;
-    color: white;
+    color: $detailFontColor;
     font-size: 1rem;
 
     .itemDetail__image 
@@ -287,17 +288,8 @@
     }
 }
 
-.showDetails {
-    font-size: 1rem;
-    border: 2px solid $main-color;
-    border-radius: 5px;
-    padding: 1rem;
-    background-color: $navbar-color;
-    margin-bottom: 1rem;
-    color: $main-color;
-}
-
-.cartStyle {
+.cartStyle 
+{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -306,37 +298,42 @@
     width: 600px;
     height: 400px;
 
-    svg {
+    svg 
+    {
         margin: 1rem;
         width: 200px;
         height: 200px;
         color: white;
     }
 
-    p {
+    p 
+    {
         font-size: 3rem;
         color: white;
     }
 }
 
-.gameBadge {
+.gameBadge 
+{
     display: flex;
     margin: 1.2rem 0rem;
 
-    .gameBadge__price {
+    .gameBadge__price 
+    {
         margin: 1rem;
-        background-color: $main-color;
-        color: $color-7;
+        background-color: $gameBadgePriceBackground;
+        color: $gameBadgePriceColor;
         border-radius: 20px;
         font-size: 1.5rem;
         margin: 0rem 0.5rem;
         padding: 1rem;
     }
 
-    .gameBadge__genre {
+    .gameBadge__genre 
+    {
         margin: 1rem;
-        background-color: $color-7;
-        color: $main-color;
+        background-color: $gameBadgeGenreBackground;
+        color: $gameBadgeGenreColor;
         border-radius: 20px;
         font-size: 1.5rem;
         margin: 0rem 0.5rem;
@@ -344,34 +341,41 @@
     }
 }
 
-.stockAvaible {
+.stockAvaible 
+{
     padding: 1.2rem;
     font-size: 1.5rem;
-    background-color: $color-7;
+    background-color: $itemStockBackgroundColor;
     width: 100%;
-    color: $main-color;
+    color: $itemStockFontColor;
 }
 
-.goCart {
+.goCart 
+{
     margin: 6.5rem;
 
-    a {
-        button {
+    a 
+    {
+        button 
+        {
             @include buttonStyle;
             width: 160px;
         }
 
-        button:hover {
+        button:hover 
+        {
             @include buttonStyleHover;
         }
 
-        button:active {
+        button:active 
+        {
             @include buttonStyleActive;
         }
     }
 }
 
-.itemInCart {
+.itemInCart 
+{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -380,14 +384,15 @@
     margin: 1rem auto;
     width: 900px;
     height: 200px;
-    background-color: $color-7;
+    background-color: $itemInCartBackgroundColor;
     height: max-content;
     align-self: flex-start;
     transition: border 0.2s;
-    border: 2px solid $color-7;
+    border: 2px solid $itemInCartBorderColor;
     @include boxShadow;
 
-    .itemInCart__details {
+    .itemInCart__details 
+    {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -395,79 +400,96 @@
         margin-right: auto;
         margin-left: 1rem;
 
-        h3 {
+        h3 
+        {
             color: $font-color;
             font-size: 1.4rem;
             padding: 0.3rem 1rem;
 
-            span {
+            span 
+            {
                 color: $main-color;
             }
         }
     }
 
-    img {
+    img 
+    {
         width: 14%;
         object-fit: cover;
         border: 2px solid $main-color;
     }
 
-    button {
+    button 
+    {
         @include buttonStyle;
     }
 
-    button:hover {
+    button:hover 
+    {
         @include buttonStyleHover;
     }
 
-    button:active {
+    button:active 
+    {
         @include buttonStyleActive;
     }
 }
 
-.itemInCart:hover {
+.itemInCart:hover 
+{
     border: 2px solid $main-color;
 }
 
-.btnClearCart {
+.btnClearCart 
+{
     @include buttonStyle;
     margin: 1rem 0rem;
 }
 
-.btnClearCart:hover {
+.btnClearCart:hover 
+{
     @include buttonStyleHover;
 }
 
-.btnClearCart:active {
+.btnClearCart:active 
+{
     @include buttonStyleActive;
 }
 
-.buyAll {
+.buyAll 
+{
     @include buttonStyle
 }
 
-.buyAll:hover {
+.buyAll:hover 
+{
     @include buttonStyleHover
 }
 
-.buyAll:active {
+.buyAll:active 
+{
     @include buttonStyleActive
 }
 
-.btnGoIndex {
+.btnGoIndex 
+{
     @include buttonStyle;
     margin: 1rem;
 }
 
-.btnGoIndex:hover {
+.btnGoIndex:hover 
+{
     @include buttonStyleHover;
 }
 
-.btnGoIndex:active {
+.btnGoIndex:active 
+{
     @include buttonStyleActive;
 }
 
-.circleLoader {
+.circleLoader 
+{
     margin: 0rem auto;
 }
 
@@ -490,7 +512,7 @@
         position: sticky;
         top: 0;
         margin: 1rem auto;
-        background-color: $color-7;
+        background-color: $menuCartBackgroundColor;
         width: 40%;
         height: 200px;
         @include boxShadow;
@@ -503,7 +525,7 @@
 
             span
             {
-                color: white;
+                color: $menuCartPriceFontColor;
             }
         }
 
