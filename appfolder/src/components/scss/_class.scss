@@ -97,7 +97,6 @@
     color: $main-color;
 }
 
-
 .counter 
 {
     display: flex;
@@ -165,48 +164,77 @@
     }
 }
 
-.itemStyle 
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    transition: transform 0.3s, border 0.3s;
-    transform: scale(1, 1);
-    margin: 1rem;
-    width: 375px;
-    height: 570px;
-    background-color: $itemBackgroundColor;
-    cursor: pointer;
-    border: 2px solid $itemBorderColor;
-    @include boxShadow;
-
-    h3 
-    {
-        font-size: 1.5rem;
-        color: $main-color;
-        padding: 1rem;
-    }
-
-    img 
-    {
-        border: 3px solid $imageBorderColor;
-        max-width: 300px;
-    }
-}
-
-.itemStyle:hover 
-{
-    transform: scale(1.02, 1.02);
-    border: 2px solid $main-color;
-}
-
 .itemListStyle 
 {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin: 2rem;
+    margin: 1rem;
+
+    .itemListStyle__item 
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem;
+        width: 254px;
+        height: 480px;
+        background-color: $itemBackgroundColor;
+        border: 2px solid $itemBorderColor;
+        transform: scale(1, 1);
+        transition: transform 0.3s, border 0.3s;
+        cursor: pointer;
+        @include boxShadow;
+
+        .itemListStyle__item--title
+        {
+            font-size: 1.2rem;
+            margin: 0.5rem 1rem;
+            color: $font-color;
+        }
+
+        .itemListStyle__item--price
+        {
+            color: $main-color;
+            font-size: 2rem;
+        }
+
+        .itemListStyle__item--btnBuy
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            width: 100%;
+            background-color: $itemStockBackgroundColor;
+            color: $font-color;
+            font-weight: bold;
+
+            svg
+            {
+                margin-right: 5px;
+            }
+        }
+
+        .itemListStyle__item--btnBuy:hover
+        {
+            color: $main-color;
+        }
+
+        img 
+        {
+            width: 250px;
+        }
+    }
+
+    .itemListStyle__item:hover 
+    {
+        transform: scale(1.02, 1.02);
+        border: 2px solid $main-color;
+    }
 }
 
 .itemDetail 
@@ -311,43 +339,6 @@
         font-size: 3rem;
         color: white;
     }
-}
-
-.gameBadge 
-{
-    display: flex;
-    margin: 1.2rem 0rem;
-
-    .gameBadge__price 
-    {
-        margin: 1rem;
-        background-color: $gameBadgePriceBackground;
-        color: $gameBadgePriceColor;
-        border-radius: 20px;
-        font-size: 1.5rem;
-        margin: 0rem 0.5rem;
-        padding: 1rem;
-    }
-
-    .gameBadge__genre 
-    {
-        margin: 1rem;
-        background-color: $gameBadgeGenreBackground;
-        color: $gameBadgeGenreColor;
-        border-radius: 20px;
-        font-size: 1.5rem;
-        margin: 0rem 0.5rem;
-        padding: 1rem;
-    }
-}
-
-.stockAvaible 
-{
-    padding: 1.2rem;
-    font-size: 1.5rem;
-    background-color: $itemStockBackgroundColor;
-    width: 100%;
-    color: $itemStockFontColor;
 }
 
 .goCart 
