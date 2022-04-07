@@ -1,9 +1,9 @@
-import Links from "./Links"
+import FooterLinks from "./FooterLinks"
 
 function Footer() {
     return (
         <footer>
-            <Links />
+            <FooterLinks />
             Copyright ©2022. Kyoto Games. All Rights Reserved.
         </footer>
     )

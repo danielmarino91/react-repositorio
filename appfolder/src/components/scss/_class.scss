@@ -539,3 +539,27 @@
         }
     }
 }
+
+.footerLinks
+{
+    margin-bottom: 2rem;
+
+    svg
+    {
+        transition: color 0.2s;
+        height: 30px;
+        width: 30px;
+        margin: 0rem 2rem;
+        color: white;
+    }
+    
+    svg:hover
+    {
+        color: $main-color;
+    }
+    
+    svg:active
+    {
+        color: black;
+    }
+}
