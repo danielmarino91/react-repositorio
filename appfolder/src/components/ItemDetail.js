@@ -10,6 +10,14 @@ function ItemDetail({ detalle }) {
   const resultado = useContext(contexto)
   const addItem = resultado.addItem
 
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2
+  })
+
+  const price = formatter.format(`${detalle.precio}`)
+
   const onAdd = (unidadSeleccionada) => {
 
     if ((unidadSeleccionada != undefined) && (unidadSeleccionada > 1)) {
@@ -30,11 +38,11 @@ function ItemDetail({ detalle }) {
 
       <div className="itemDetail__detail">
         <p className="itemDetail__detail--title">{detalle.nombre}</p>
-        <p className="itemDetail__detail--price">${detalle.precio}</p>
+        <p className="itemDetail__detail--price">{price}</p>
         <p><span>Información:</span> {detalle.detalle}</p>
         <p><span>Categoría:</span> {detalle.categoria}</p>
         <p><span>Plataformas:</span> {detalle.plataforma}</p>
-        
+
       </div>
 
       <div className="itemDetail__buttons">

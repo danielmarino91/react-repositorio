@@ -4,8 +4,7 @@ import ItemDetail from './ItemDetail'
 import Loader from "./Loader"
 import { useParams } from "react-router-dom"
 import { db } from "./Firebase"
-import { getDocs, collection } from "firebase/firestore"
-// import JUEGOS from "./db_juegos.json"
+import { getDocs, collection, query, where } from "firebase/firestore"
 
 function ItemDetailContainer() {
   const [productosDetalle, setProductosDetalle] = useState([])
@@ -13,32 +12,19 @@ function ItemDetailContainer() {
   const { id } = useParams()
 
   useEffect(() => {
-    const juegosCollection = collection(db, "games")
-    const documentos = getDocs(juegosCollection)
 
-    documentos
+    const coleccionJuegos = collection(db, "games")
+    const filtroJuego = query(coleccionJuegos, where("id", "==", Number(id)))
+    const respuestaJuegos = getDocs(filtroJuego)
+
+    respuestaJuegos
       .then((respuesta) => {
-        const listaJuegos = respuesta.docs.map(doc => doc.data())
-        const juegoElegido = listaJuegos.filter(data => data.id == id)
-        setProductosDetalle(juegoElegido[0])
+        const detalleJuego = respuesta.docs.map(doc => doc.data())
+        setProductosDetalle(detalleJuego[0])
       })
       .catch((err) => toast.error(err))
       .finally(() => setLoading(false))
   }, [id])
-
-  // const juegos = JUEGOS[id];
-
-  // useEffect(() => {
-  //   const productDetailPromise = new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       resolve(juegos)
-  //     }, 0);
-  //   })
-  //   productDetailPromise
-  //     .then((data) => { setProductosDetalle(data) })
-  //     .catch((err) => { toast.error(err) })
-  //     .finally(() => { setLoading(false) })
-  // }, [id])
 
   return (
     <>

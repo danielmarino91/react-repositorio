@@ -3,6 +3,8 @@ import { BsFillCartXFill } from "react-icons/bs"
 import { useContext } from "react"
 import { contexto } from "./CartContext"
 import { NavLink } from "react-router-dom"
+import { db } from "./Firebase"
+import { collection } from "firebase/firestore"
 
 const Cart = () => {
 
@@ -10,6 +12,9 @@ const Cart = () => {
   const { emptyCart, removeItem, cart, total } = resultado
 
   const carrito = cart
+
+  // const cartCollection = collection(db, "productsInCart")
+  // addDoc(cartCollection, {})
 
   return (
     <>

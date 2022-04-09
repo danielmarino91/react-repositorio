@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 import ItemList from './ItemList'
 import Loader from "./Loader"
 import { db } from "./Firebase"
-import { getDocs, collection } from "firebase/firestore"
+import { getDocs, collection, query, where } from "firebase/firestore"
 
 function ItemListContainer() {
     const [productos, setProductos] = useState([])
@@ -12,23 +12,27 @@ function ItemListContainer() {
     const { categoria: idCategoria } = useParams()
 
     useEffect(() => {
-        const juegosCollection = collection(db, "games")
-        const documentos = getDocs(juegosCollection)
+        if (!idCategoria) {
+            const coleccionJuegos = collection(db, "games")
+            const respuestaJuegos = getDocs(coleccionJuegos)
 
-        documentos
-            .then(setLoading(true))
-            .then((respuesta) => {
-                if (idCategoria) {
-                    const listaJuegos = respuesta.docs.map(doc => doc.data())
-                    const juegosEncontrados = listaJuegos.filter(data => data.categoria == idCategoria)
-                    setProductos(juegosEncontrados)
-                }
-                else {
-                    setProductos(respuesta.docs.map(doc => doc.data()))
-                }
-            })
-            .catch((err) => toast.error(err))
-            .finally(() => setLoading(false))
+            respuestaJuegos
+                .then(setLoading(true))
+                .then((res) => { setProductos(res.docs.map(doc => doc.data())) })
+                .catch((err) => toast.error(err))
+                .finally(() => setLoading(false))
+        }
+        else {
+            const coleccionJuegos = collection(db, "games")
+            const filtroJuegos = query(coleccionJuegos, where("categoria", "==", idCategoria))
+            const respuestaJuegos = getDocs(filtroJuegos)
+
+            respuestaJuegos
+                .then(setLoading(true))
+                .then((res) => { setProductos(res.docs.map(doc => doc.data())) })
+                .catch((err) => toast.error(err))
+                .finally(() => setLoading(false))
+        }
     }, [idCategoria])
 
     return (
@@ -40,3 +44,4 @@ function ItemListContainer() {
 }
 
 export default ItemListContainer
+
