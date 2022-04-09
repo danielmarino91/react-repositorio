@@ -13,7 +13,6 @@
     box-shadow: 2px 2px 10px $shadowColor;
 }
 
-//buttonStyle
 @mixin buttonStyle
 {
     transition: border 0.2s, color 0.2s, background-color 0.2s;

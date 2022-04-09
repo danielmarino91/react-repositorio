@@ -11,7 +11,7 @@ function App() {
         <CartContext>
             <BrowserRouter>
                 <Header />
-                <ToastContainer position="bottom-right" autoClose={2000} theme="dark" hideProgressBar={true} />
+                <ToastContainer position="bottom-right" autoClose={5000} theme="dark" hideProgressBar={true} />
                 <Main />
                 <Footer />
             </BrowserRouter>

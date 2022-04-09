@@ -45,6 +45,7 @@ const CartContext = ({ children }) => {
         addItem: addItem,
         removeItem: removeItem,
         emptyCart: emptyCart,
+
     }
 
     return (
