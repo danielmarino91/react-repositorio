@@ -10,11 +10,11 @@ function ItemCount({ id, title, initial, stock, onAdd }) {
     const cart = resultado.cart
     
     useEffect(() => {        
-        const itemFinded = cart.find(e => e.id === id);
+        const itemFindedInCart = cart.find(e => e.id === id);
 
-        if (itemFinded !== undefined)
+        if (itemFindedInCart !== undefined)
         {
-            const asd = itemFinded.stock
+            const asd = itemFindedInCart.stock
             setStockInCart(asd)
         }
         else
