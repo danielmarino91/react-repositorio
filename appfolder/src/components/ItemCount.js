@@ -1,7 +1,28 @@
-import { useState } from "react"
+import { useContext, useState, useEffect } from "react"
+import { toast } from "react-toastify"
+import { contexto } from "./CartContext"
 
-function ItemCount({ title, initial, stock, onAdd  }) {
+function ItemCount({ id, title, initial, stock, onAdd }) {
     const [Counter, setCounter] = useState(initial)
+    const [StockInCart, setStockInCart] = useState()
+    
+    const resultado = useContext(contexto)
+    const cart = resultado.cart
+    
+    useEffect(() => {        
+        const itemFinded = cart.find(e => e.id === id);
+
+        if (itemFinded !== undefined)
+        {
+            const asd = itemFinded.stock
+            setStockInCart(asd)
+        }
+        else
+        {
+            setStockInCart(0)
+        }
+    }, [StockInCart])
+    
 
     const add = () => {
         if (Counter >= (stock)) {
@@ -21,8 +42,12 @@ function ItemCount({ title, initial, stock, onAdd  }) {
         }
     }
 
-    const addToCart = () => {
-            {onAdd(Counter)}
+    const addToCart = () => {   
+        if (stock < StockInCart + Counter)
+        {toast.error(`Ya hay ${StockInCart} copias en el carrito, solo puede llevar ${stock - StockInCart} mas`)}
+        else{
+            onAdd(Counter)
+        }
     }
 
     return (

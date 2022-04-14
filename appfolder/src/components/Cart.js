@@ -41,7 +41,7 @@ const Cart = () => {
   
   return (
     <>
-      {carrito == 0 ? <div className="cartStyle"><p>No hay productos agregados al carrito</p><BsFillCartXFill /><NavLink to="/"><button className="btnGoIndex">Ver mas productos</button></NavLink></div>
+      {carrito == 0 ? <div className="cartStyle"><p>El carrito esta vacio</p><BsFillCartXFill /><NavLink to="/"><button className="btnGoIndex">Ver mas productos</button></NavLink></div>
         :
         <>
           <div className="inCart">

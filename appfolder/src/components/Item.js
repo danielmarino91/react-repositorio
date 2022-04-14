@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { IoEyeSharp } from "react-icons/io5";
 
 function Item({ producto }) {
 
@@ -13,11 +13,11 @@ function Item({ producto }) {
 
     return (
         <Link to={`/item/${producto.id}`}>
-            <div className='itemListStyle__item '>
+            <div className='itemListStyle__item'>
                 <img src={producto.imagen}></img>
                 <h3 className="itemListStyle__item--title">{producto.nombre}</h3>
                 <div className="itemListStyle__item--price">{price}</div>
-                <div className="itemListStyle__item--btnBuy"><AiOutlineShoppingCart />Comprar</div>
+                <div className="itemListStyle__item--btnBuy"><IoEyeSharp />Mostrar detalles</div>
             </div>
         </Link>
     )

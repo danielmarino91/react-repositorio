@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 function Links() {
     return (
-        <ul className="links">
+        <ul className="links">  
             <NavLink to="/categoria/Accion">Accion</NavLink>
             <NavLink to="/categoria/Aventura">Aventura</NavLink>
             <NavLink to="/categoria/Peleas">Peleas</NavLink>

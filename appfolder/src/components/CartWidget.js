@@ -10,7 +10,9 @@ function CartWidget() {
 
     return (
         <>
-        { itemCartNumber > 0 ? <div className="cartWidget"><AiOutlineShoppingCart /><p>{itemCartNumber} - ${totalPrice}</p></div> : null }
+            <div className="cartWidget">
+                <AiOutlineShoppingCart />{itemCartNumber > 0 ? <p>{itemCartNumber} - ${totalPrice}</p> : <p>Carrito</p>}
+            </div>
         </>
     )
 }
