@@ -5,7 +5,6 @@
 Kyoto Games es un e-commerce de una tienda virtual de videojuegos. Para el desarrollo de la aplicación web, busque referencias de otros e-commerce con temática de videojuegos, tanto en estructura, funcionalidad y diseño.
 
 ## Funcionalidades
----
 * La base de datos está hecha en Firebase
 * El deployment está hecho en Vercel
 * El stock está controlado. No se puede agregar al carrito más cantidad de la que tiene el stock de Firebase
@@ -13,7 +12,6 @@ Kyoto Games es un e-commerce de una tienda virtual de videojuegos. Para el desar
 
 
 ## Estado del proyecto
----
 El proyecto está en desarrollo, pero cuenta con los requisitos exigidos para la entrega final de Coderhouse. La idea es seguir trabajando en el proyecto e implementar las siguientes funcionalidades:
 
 * Stock real de productos
@@ -22,7 +20,6 @@ El proyecto está en desarrollo, pero cuenta con los requisitos exigidos para la
 * Posibilidad de agregar juegos a favoritos
 
 ## Guia para la instalación
----
 ### react-router-dom
 #### Se utilizo para hacer un DOM virtual
 ```
@@ -45,7 +42,6 @@ npm install --save react-toastify
 ```
 
 ## Herramientas utilizadas
----
 * HTML
 * CSS
 * SASS (_con metodologia BEM_)
@@ -53,7 +49,6 @@ npm install --save react-toastify
 * ReactJS
 
 ## Librerias utilizadas
----
 * [react-router-dom](https://reactrouter.com/)
 * [react-icons](https://react-icons.github.io/react-icons) 
 * [Firebase](https://firebase.google.com/)
