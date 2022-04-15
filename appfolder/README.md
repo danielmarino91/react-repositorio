@@ -1,23 +1,27 @@
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+
 # Proyecto Final ReactJS (CoderHouse 2022)
 
-Kyoto Games es un e-commerce que simula una tienda virtual de videojuegos. Para el desarrollo de la aplicación web, busque referencias de otros e-commerce con temática de videojuegos, tanto en estructura, funcionalidad y diseño.
+Kyoto Games es un e-commerce de una tienda virtual de videojuegos. Para el desarrollo de la aplicación web, busque referencias de otros e-commerce con temática de videojuegos, tanto en estructura, funcionalidad y diseño.
 
 ## Funcionalidades
 ---
-* La base de datos esta hecha en Firebase
-* El deployment esta hecho en Vercel
+* La base de datos está hecha en Firebase
+* El deployment está hecho en Vercel
+* El stock está controlado. No se puede agregar al carrito más cantidad de la que tiene el stock de Firebase
+* Al realizar una compra, se genera una orden de compra en Firebase con el nombre "order"
+
 
 ## Estado del proyecto
 ---
-El proyecto esta en desarrollo, pero cuenta con los requisitos exigidos para la entrega final de Coderhouse. La idea es seguir trabajando en el proyecto e implementar las siguientes funcionalidades:
+El proyecto está en desarrollo, pero cuenta con los requisitos exigidos para la entrega final de Coderhouse. La idea es seguir trabajando en el proyecto e implementar las siguientes funcionalidades:
 
-* Diseño responsive, con tres resoluciones: mobile, tablet y desktop
 * Stock real de productos
-* Posibilidad de crear una cuenta y acceder a ella
+* Diseño responsive, con tres resoluciones: mobile, tablet y desktop
+* Barra de búsqueda para hacer un filtro más preciso de productos
 * Posibilidad de agregar juegos a favoritos
-* Barra de busqueda para hacer un filtro mas preciso de productos
 
-## Guia para la instalacion
+## Guia para la instalación
 ---
 ### react-router-dom
 #### Se utilizo para hacer un DOM virtual
@@ -55,9 +59,3 @@ npm install --save react-toastify
 * [Firebase](https://firebase.google.com/)
 * [react-toastify](https://fkhadra.github.io/react-toastify/introduction)
 * [react](https://es.reactjs.org/) (_useState, useContext, createContext_)
-
-Falta:
-1.Imagenes y videos
-2.Implementar el badge de Vercel
-3.Checkear React-spring || React-scroll
-

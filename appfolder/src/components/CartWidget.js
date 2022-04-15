@@ -1,4 +1,5 @@
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai"
+import { BsCartX } from "react-icons/bs"
 import { useContext } from "react"
 import { contexto } from "./CartContext"
 
@@ -11,7 +12,7 @@ function CartWidget() {
     return (
         <>
             <div className="cartWidget">
-                <AiOutlineShoppingCart />{itemCartNumber > 0 ? <p>{itemCartNumber} - ${totalPrice}</p> : <p>Carrito</p>}
+                {itemCartNumber > 0 ? <><AiOutlineShoppingCart /><p>{itemCartNumber} - ${totalPrice}</p></> : <BsCartX/>}
             </div>
         </>
     )

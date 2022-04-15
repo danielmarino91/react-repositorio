@@ -10,7 +10,7 @@ function ItemListContainer() {
     const [productos, setProductos] = useState([])
     const [Loading, setLoading] = useState(true)
     const { categoria: idCategoria } = useParams()
-
+    
     useEffect(() => {
         if (!idCategoria) {
             const coleccionJuegos = collection(db, "games")

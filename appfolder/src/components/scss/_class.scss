@@ -1,87 +1,212 @@
-.navbar 
+//Cart.js
+.cartStyle 
 {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    background-color: $navbar-color;
-    border-bottom: 2px solid $main-color;
+    justify-content: center;
+    margin: 6rem auto;
+    width: 600px;
+    height: 400px;
 
-    img
+    svg 
     {
-        width: 250px;
-        margin: 1rem ;
-
+        margin: 1rem;
+        width: 200px;
+        height: 200px;
+        color: white;
     }
 
-    ul 
+    p 
+    {
+        font-size: 3rem;
+        color: white;
+    }
+}
+
+.btnGoIndex 
+{
+    @include buttonStyle;
+}
+
+.btnGoIndex:hover 
+{
+    @include buttonStyleHover;
+}
+
+.btnGoIndex:active 
+{
+    @include buttonStyleActive;
+}
+
+.inCart
+{
+    display:flex;
+    width: 90%;
+    margin: 1rem auto;
+
+    .inCart__products
+    {
+        width: 60%;
+    }
+
+    .inCart__buttons
     {
         display: flex;
-        align-items: center;
-        list-style: none;
-        margin-left: 1rem;
-    }
+        flex-direction: column;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        margin: 1rem auto;
+        background-color: $menuCartBackgroundColor;
+        width: 40%;
+        height: 200px;
+        @include boxShadow;
 
-    li 
-    {
-        margin: 0rem 0.5rem;
-    }
+        p
+        {
+            font-size: 2rem;
+            color: $main-color;
+            font-weight: bold;
 
-    a 
-    {
-        transition: color 0.2s;
-        text-decoration: none;
-        color: $font-color;
-        font-size: 1.2rem;
-    }
+            span
+            {
+                color: $menuCartPriceFontColor;
+            }
+        }
 
-    a:hover 
-    {
-        color: $main-color;
+        hr
+        {
+            border: 1px solid $main-color;
+            margin: 1.2rem 2rem;
+        }
+
+        .inCart__buttons--buttons
+        {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
     }
 }
 
-.links 
+.itemInCart 
 {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    list-style: none;
-    margin: 1rem;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 900px;
+    height: 200px;
+    background-color: $itemInCartBackgroundColor;
+    height: max-content;
+    align-self: flex-start;
+    transition: border 0.2s;
+    border: 2px solid $itemInCartBorderColor;
+    @include boxShadow;
 
-    li
+    .itemInCart__details 
     {
-        border-bottom: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-self: flex-start;
+        margin-right: auto;
+        margin-left: 1rem;
+
+        h3 
+        {
+            color: $font-color;
+            font-size: 1.4rem;
+            padding: 0.3rem 1rem;
+
+            span 
+            {
+                color: $main-color;
+            }
+        }
     }
 
-    .active 
+    img 
     {
-        border-bottom: 2px solid $main-color;
-        color: $main-color;
+        width: 14%;
+        object-fit: cover;
+        border: 2px solid $main-color;
     }
 
-    a 
+    button 
     {
-        transition: color 0.2s;
-        text-decoration: none;
-        padding: 0.5rem;
-        margin: 0.5rem;
+        @include buttonStyle;
     }
 
-    a:hover 
+    button:hover 
     {
-        color: $main-color;
+        @include buttonStyleHover;
+    }
+
+    button:active 
+    {
+        @include buttonStyleActive;
     }
 }
 
-.button 
+.itemInCart:hover 
 {
-    @include buttonStyle
+    border: 2px solid $main-color;
 }
 
-.buttonContainer 
+.btnBuy
 {
-    display: flex;
+    @include buttonStyle;
+    background-color: green;
+    color:white;
+    border: 2px solid white; 
 }
 
+.btnBuy:hover
+{
+    @include buttonStyleHover;
+    background-color: white;
+    color:green;
+    border: 2px solid white; 
+}
+
+.btnBuy:active
+{
+    @include buttonStyleActive;
+    background-color: black;
+    color:white;
+    border: 2px solid black; 
+}
+
+.btnBuyInProgress
+{
+    @include buttonStyle;
+    background-color: #1259c3;
+    color:white;
+    border: #1259c3; 
+    cursor: progress;
+}
+
+.btnClearCart 
+{
+    @include buttonStyle;
+    margin: 1rem 0rem;
+}
+
+.btnClearCart:hover 
+{
+    @include buttonStyleHover;
+}
+
+.btnClearCart:active 
+{
+    @include buttonStyleActive;
+}
+
+//CartWidget.js
 .cartWidget 
 {
     display: flex;
@@ -108,73 +233,32 @@
     color: $main-color;
 }
 
-.counter 
+//FooterLinks.js
+.footerLinks
 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-    margin: 0rem auto;
-    padding: 1rem;
+    margin-bottom: 2rem;
 
-    p 
+    svg
     {
-        font-size: 1.5rem;
-        color: $countNumberColor;
+        transition: color 0.2s;
+        height: 30px;
+        width: 30px;
+        margin: 0rem 2rem;
+        color: white;
     }
-
-    .counter__buttons 
+    
+    svg:hover
     {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border: 2px solid $main-color;
-        border-radius: 5px;
-        width: 90%;
-        margin: 1rem 0rem;
-        background-color: $navbar-color;
-
-        button 
-        {
-            @include buttonStyle;
-            margin: 0rem;
-            border-radius: 0;
-            border: none;
-        }
-
-        button:hover 
-        {
-            @include buttonStyleHover;
-            margin: 0rem;
-            border-radius: 0;
-            border: none;
-        }
-
-        button:active 
-        {
-            @include buttonStyleActive;
-            margin: 0rem;
-            border-radius: 0;
-            border: none;
-        }
+        color: $main-color;
     }
-
-    button 
+    
+    svg:active
     {
-        @include buttonStyle
-    }
-
-    button:hover 
-    {
-        @include buttonStyleHover
-    }
-
-    button:active 
-    {
-        @include buttonStyleActive
+        color: black;
     }
 }
 
+//Item.js
 .itemListStyle 
 {
     display: flex;
@@ -248,6 +332,75 @@
     }
 }
 
+//ItemCount.js
+.counter 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin: 0rem auto;
+    padding: 1rem;
+
+    p 
+    {
+        font-size: 1.5rem;
+        color: $countNumberColor;
+    }
+
+    .counter__buttons 
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 2px solid $main-color;
+        border-radius: 5px;
+        width: 90%;
+        margin: 1rem 0rem;
+        background-color: $navbar-color;
+
+        button 
+        {
+            @include buttonStyle;
+            margin: 0rem;
+            border-radius: 0;
+            border: none;
+        }
+
+        button:hover 
+        {
+            @include buttonStyleHover;
+            margin: 0rem;
+            border-radius: 0;
+            border: none;
+        }
+
+        button:active 
+        {
+            @include buttonStyleActive;
+            margin: 0rem;
+            border-radius: 0;
+            border: none;
+        }
+    }
+
+    button 
+    {
+        @include buttonStyle
+    }
+
+    button:hover 
+    {
+        @include buttonStyleHover
+    }
+
+    button:active 
+    {
+        @include buttonStyleActive
+    }
+}
+
+//ItemDetail.js
 .itemDetail 
 {
     display: flex;
@@ -327,31 +480,6 @@
     }
 }
 
-.cartStyle 
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 6rem auto;
-    width: 600px;
-    height: 400px;
-
-    svg 
-    {
-        margin: 1rem;
-        width: 200px;
-        height: 200px;
-        color: white;
-    }
-
-    p 
-    {
-        font-size: 3rem;
-        color: white;
-    }
-}
-
 .goCart 
 {
     margin: 6.5rem;
@@ -376,232 +504,89 @@
     }
 }
 
-.itemInCart 
+//Links.js
+.links 
 {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    margin: 1rem auto;
-    width: 900px;
-    height: 200px;
-    background-color: $itemInCartBackgroundColor;
-    height: max-content;
-    align-self: flex-start;
-    transition: border 0.2s;
-    border: 2px solid $itemInCartBorderColor;
-    @include boxShadow;
+    list-style: none;
+    margin: 1rem;
 
-    .itemInCart__details 
+    li
     {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-self: flex-start;
-        margin-right: auto;
-        margin-left: 1rem;
-
-        h3 
-        {
-            color: $font-color;
-            font-size: 1.4rem;
-            padding: 0.3rem 1rem;
-
-            span 
-            {
-                color: $main-color;
-            }
-        }
+        border-bottom: none;
     }
 
-    img 
+    .active 
     {
-        width: 14%;
-        object-fit: cover;
-        border: 2px solid $main-color;
+        border-bottom: 2px solid $main-color;
+        color: $main-color;
     }
 
-    button 
+    a 
     {
-        @include buttonStyle;
+        transition: color 0.2s;
+        text-decoration: none;
+        padding: 0.5rem;
+        margin: 0.5rem;
     }
 
-    button:hover 
+    a:hover 
     {
-        @include buttonStyleHover;
-    }
-
-    button:active 
-    {
-        @include buttonStyleActive;
+        color: $main-color;
     }
 }
 
-.itemInCart:hover 
-{
-    border: 2px solid $main-color;
-}
-
-.btnClearCart 
-{
-    @include buttonStyle;
-    margin: 1rem 0rem;
-}
-
-.btnClearCart:hover 
-{
-    @include buttonStyleHover;
-}
-
-.btnClearCart:active 
-{
-    @include buttonStyleActive;
-}
-
-.buyAll 
-{
-    @include buttonStyle
-}
-
-.buyAll:hover 
-{
-    @include buttonStyleHover
-}
-
-.buyAll:active 
-{
-    @include buttonStyleActive
-}
-
-.btnGoIndex 
-{
-    @include buttonStyle;
-}
-
-.btnGoIndex:hover 
-{
-    @include buttonStyleHover;
-}
-
-.btnGoIndex:active 
-{
-    @include buttonStyleActive;
-}
-
-.btnBuy
-{
-    @include buttonStyle;
-    background-color: green;
-    color:white;
-    border: 2px solid white; 
-}
-
-.btnBuy:hover
-{
-    @include buttonStyleHover;
-    background-color: white;
-    color:green;
-    border: 2px solid white; 
-}
-
-.btnBuy:active
-{
-    @include buttonStyleActive;
-    background-color: black;
-    color:white;
-    border: 2px solid black; 
-}
-
-.btnBuyInProgress
-{
-    @include buttonStyle;
-    background-color: #1259c3;
-    color:white;
-    border: #1259c3; 
-    cursor: progress;
-}
-
+//Loader.js
 .circleLoader 
 {
     margin: 0rem auto;
 }
 
-.inCart
+//NavBar.js
+.navbar 
 {
-    display:flex;
-    width: 90%;
-    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $navbar-color;
+    border-bottom: 1px solid $main-color;
 
-    .inCart__products
+    img
     {
-        width: 60%;
+        width: 250px;
+        margin: 1rem ;
+
     }
 
-    .inCart__buttons
+    ul 
     {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: sticky;
-        top: 0;
-        margin: 1rem auto;
-        background-color: $menuCartBackgroundColor;
-        width: 40%;
-        height: 200px;
-        @include boxShadow;
-
-        p
-        {
-            font-size: 2rem;
-            color: $main-color;
-            font-weight: bold;
-
-            span
-            {
-                color: $menuCartPriceFontColor;
-            }
-        }
-
-        hr
-        {
-            border: 1px solid $main-color;
-            margin: 1.2rem 2rem;
-        }
-
-        .inCart__buttons--buttons
-        {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-        }
+        align-items: center;
+        list-style: none;
+        margin-left: 1rem;
     }
-}
 
-.footerLinks
-{
-    margin-bottom: 2rem;
+    li 
+    {
+        margin: 0rem 0.5rem;
+    }
 
-    svg
+    a 
     {
         transition: color 0.2s;
-        height: 30px;
-        width: 30px;
-        margin: 0rem 2rem;
-        color: white;
+        text-decoration: none;
+        color: $font-color;
+        font-size: 1.2rem;
     }
-    
-    svg:hover
+
+    a:hover 
     {
         color: $main-color;
     }
-    
-    svg:active
-    {
-        color: black;
-    }
 }
 
+//ProductFinder.js
 .productFinder
 {
     transition: border 0.2s, color 0.2s; 
@@ -646,22 +631,63 @@
     }
 }
 
-.userPanel
+//SuccesBuy.js
+.succesBuy
 {
-    transition: border-bottom 0s;
-    padding: 1rem;
-    
-    svg
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 6rem auto;
+    height: 400px;
+
+    .succesBuy__rightSide
     {
-        transition: color 0.2s;
-        width: 2rem;
-        height: 2rem;
-        color: white;
+        display: flex;
+        flex-direction: column;
+
+        .succesBuy__rightSide--message
+        {
+            margin: 2rem;
+
+            p 
+            {
+                font-size: 2.5rem;
+                color: white;
+            }
+        }
+        .succesBuy__rightSide--details
+        {
+            display: flex;
+            flex-direction: column;
+            
+            h3
+            {
+                font-size: 2rem;
+                color: $main-color;
+                font-weight: 500;
+            }
+
+            p 
+            {
+                font-size: 1.5rem;
+                color: white;
+            }
+        }
+        .succesBuy__rightSide--button
+        {
+            button
+            {
+                margin: 1rem;
+            }
+
+        }
     }
 
-    svg:hover
+    svg 
     {
-        color: $main-color;
-        cursor: pointer;
+        margin: 1rem;
+        width: 200px;
+        height: 200px;
+        color: green;
     }
 }
