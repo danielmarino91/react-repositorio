@@ -9,10 +9,18 @@ function CartWidget() {
     const itemCartNumber = resultado.quantity
     const totalPrice = resultado.total;
 
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2
+    })
+
+    const price = formatter.format(`${totalPrice}`)
+
     return (
         <>
             <div className="cartWidget">
-                {itemCartNumber > 0 ? <><AiOutlineShoppingCart /><p>{itemCartNumber} - ${totalPrice}</p></> : <BsCartX/>}
+                {itemCartNumber > 0 ? <><AiOutlineShoppingCart /><p>{itemCartNumber} - {price}</p></> : <BsCartX/>}
             </div>
         </>
     )
