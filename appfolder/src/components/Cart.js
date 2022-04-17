@@ -16,7 +16,7 @@ const Cart = () => {
   const [BuyComplete, setBuyComplete] = useState(false)
   const [BuyOrder, setBuyOrder] = useState("")
 
-  const carrito = cart
+  const userCart = cart
 
   const checkOut = () => {
     setBuyInProgress(true)
@@ -26,7 +26,7 @@ const Cart = () => {
         telefono: "(011) 1234-5678",
         email: "danielmariño@gmail.com"
       },
-      items: carrito,
+      items: userCart,
       date: serverTimestamp(),
       total: total
     }
@@ -44,17 +44,17 @@ const Cart = () => {
   const price = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 })
 
   if (BuyComplete == true) {
-    return (<SuccesBuy name="Daniel" phone="(011) 1234-5678" email="danielmariño@gmail.com" date={serverTimestamp} total={total} order={BuyOrder} games={carrito} />)
+    return (<SuccesBuy name="Daniel" phone="(011) 1234-5678" email="danielmariño@gmail.com" date={serverTimestamp} total={total} order={BuyOrder} games={userCart} />)
   }
   else {
     return (
       <>
-        {carrito == 0 ? <div className="cartStyle"><p>El carrito esta vacio</p><BsFillCartXFill /><NavLink to="/"><button className="btnGoIndex">Ver mas productos</button></NavLink></div>
+        {userCart == 0 ? <div className="cartStyle"><p>El carrito esta vacio</p><BsFillCartXFill /><NavLink to="/"><button className="btnGoIndex">Ver mas productos</button></NavLink></div>
           :
           <>
             <div className="inCart">
               <div className="inCart__products">
-                {carrito.map(item => (<div className="itemInCart" key={`uniqueID${item.id}`}>
+                {userCart.map(item => (<div className="itemInCart" key={`uniqueID${item.id}`}>
                   <img src={item.imagen}></img>
                   <div className="itemInCart__details">
                     <h3><span>Titulo: </span>{item.item}</h3>

@@ -8,7 +8,7 @@ function ItemDetail({ detalle }) {
 
   const [seleccionado, setseleccionado] = useState(false);
   const resultado = useContext(contexto)
-  const addItem = resultado.addItem  
+  const addItem = resultado.addItem
 
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -46,8 +46,16 @@ function ItemDetail({ detalle }) {
       </div>
 
       <div className="itemDetail__buttons">
-        {seleccionado ? <div className="goCart"><NavLink to="/carrito"><button onClick={() => { addItem(detalle.id, detalle.nombre, detalle.precio, detalle.imagen, seleccionado) }}>Terminar compra</button></NavLink></div> : 
-        <><span><span>Stock disponible:</span> {detalle.stock}</span><ItemCount id={detalle.id} title={detalle.nombre} initial={1} stock={detalle.stock} onAdd={onAdd}/></>}
+        {seleccionado ? <div className="goCart">
+          <NavLink to="/carrito">
+            <button onClick={() => { addItem(detalle.id, detalle.nombre, detalle.precio, detalle.imagen, seleccionado) }}>
+              Terminar compra
+            </button>
+          </NavLink>
+        </div> :
+          <>
+            <ItemCount id={detalle.id} initial={1} stock={detalle.stock} onAdd={onAdd} />
+          </>}
       </div>
     </div>
   )

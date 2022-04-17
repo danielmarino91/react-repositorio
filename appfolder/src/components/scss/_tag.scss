@@ -1,19 +1,19 @@
 body {
     background-color: $background-color;
-}
 
-body::-webkit-scrollbar {
-    width: 20px;
-}
-
-body::-webkit-scrollbar-track {
-    background: $scrollBarColor;
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: $main-color;
-    border: 5px solid $scrollBarColor;  
-    border-radius: 40px;
+    &::-webkit-scrollbar {
+        width: 20px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: $scrollBarColor;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: $main-color;
+        border: 5px solid $scrollBarColor;  
+        border-radius: 40px;
+    }
 }
 
 main {
@@ -41,14 +41,14 @@ h2 {
 
 a {
     text-decoration: none;
-}
 
-a:visited {
-    color: $linkVisitedColor;
-}
-
-a:active {
-    color: $linkActiveColor;
+    &:visited {
+        color: $linkVisitedColor;
+    }
+    
+    &:active {
+        color: $linkActiveColor;
+    }
 }
 
 button {

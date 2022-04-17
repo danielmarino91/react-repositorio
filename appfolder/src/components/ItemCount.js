@@ -2,27 +2,25 @@ import { useContext, useState, useEffect } from "react"
 import { toast } from "react-toastify"
 import { contexto } from "./CartContext"
 
-function ItemCount({ id, title, initial, stock, onAdd }) {
+function ItemCount({ id, initial, stock, onAdd }) {
     const [Counter, setCounter] = useState(initial)
     const [StockInCart, setStockInCart] = useState()
-    
+
     const resultado = useContext(contexto)
     const cart = resultado.cart
-    
-    useEffect(() => {        
+
+    useEffect(() => {
         const itemFindedInCart = cart.find(e => e.id === id);
 
-        if (itemFindedInCart !== undefined)
-        {
-            const asd = itemFindedInCart.stock
-            setStockInCart(asd)
+        if (itemFindedInCart !== undefined) {
+            const newStockInCart = itemFindedInCart.stock
+            setStockInCart(newStockInCart)
         }
-        else
-        {
+        else {
             setStockInCart(0)
         }
     }, [StockInCart])
-    
+
 
     const add = () => {
         if (Counter >= (stock)) {
@@ -42,23 +40,23 @@ function ItemCount({ id, title, initial, stock, onAdd }) {
         }
     }
 
-    const addToCart = () => {   
-        if (stock < StockInCart + Counter)
-        {toast.error(`Ya hay ${StockInCart} copias en el carrito, solo puede llevar ${stock - StockInCart} mas`)}
-        else{
+    const addToCart = () => {
+        if (stock < StockInCart + Counter) { toast.error(`Ya hay ${StockInCart} copias en el carrito, solo puede llevar ${stock - StockInCart} mas`) }
+        else {
             onAdd(Counter)
         }
     }
 
     return (
-            <div className="counter">
-                <div className="counter__buttons">
-                    <button onClick={subtract}>-</button>
-                    <p>{Counter}</p>
-                    <button onClick={add}>+</button>
-                </div>
-                    <button onClick={addToCart}>Añadir {Counter} {title}</button>
+        <div className="counter">
+            <span>Stock disponible: {stock}</span>
+            <div className="counter__buttons">
+                <button onClick={subtract}>-</button>
+                <p>{Counter}</p>
+                <button onClick={add}>+</button>
             </div>
+            <button onClick={addToCart}>Añadir producto</button>
+        </div>
     );
 }
 
