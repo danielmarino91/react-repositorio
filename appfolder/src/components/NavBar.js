@@ -1,9 +1,9 @@
-import CartWidget from "./CartWidget"
-import { Link, NavLink } from "react-router-dom"
 import { useState } from "react"
-import Categories from "./Categories"
+import { Link, NavLink } from "react-router-dom"
 import { GiHamburgerMenu } from "react-icons/gi"
 import { ImCross } from "react-icons/im"
+import CartWidget from "./CartWidget"
+import Categories from "./Categories"
 import ProductFinder from "./ProductFinder"
 
 function NavBar() {
@@ -12,13 +12,11 @@ function NavBar() {
 
     const change = () => {
         setCategorieVisible(!CategorieVisible)
-        
-        if(CategorieVisible !== true)
-        {
+
+        if (CategorieVisible !== true) {
             document.getElementsByClassName("navbar")[0].style.border = "none";
         }
-        else if(CategorieVisible == true)
-        {
+        else if (CategorieVisible == true) {
             document.getElementsByClassName("navbar")[0].style.borderBottom = "1px solid #f34213";
         }
     }
@@ -31,7 +29,7 @@ function NavBar() {
                 <ProductFinder />
                 <NavLink to="/carrito"><CartWidget numero="0" /></NavLink>
             </nav>
-            {CategorieVisible == true ? <><Categories /></> : null}
+            {CategorieVisible == true ? <Categories /> : null}
         </>
     )
 }
