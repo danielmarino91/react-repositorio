@@ -42,12 +42,13 @@
 .inCart
 {
     display:flex;
-    width: 90%;
+    justify-content: space-between;
     margin: 1rem auto;
 
     .inCart__products
     {
         width: 60%;
+        margin: 0rem 2rem;
     }
 
     .inCart__buttons
@@ -58,9 +59,9 @@
         position: sticky;
         top: 0;
         margin: 1rem auto;
+        padding: 1rem;
         background-color: $menuCartBackgroundColor;
         width: 40%;
-        height: 200px;
         @include boxShadow;
 
         p
@@ -78,7 +79,44 @@
         hr
         {
             border: 1px solid $main-color;
-            margin: 1.2rem 2rem;
+            margin: 0rem 1rem;
+        }
+
+        .inCart__buttons--total
+        {
+            padding: 2rem;
+        }
+
+        .inCart__buttons--form
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h3
+            {
+                color:$main-color;
+                font-size: 2rem;
+                padding: 1.5rem;
+            }
+
+            p
+            {
+                font-size: 1.5rem;
+                padding: 0.5rem;
+            }
+
+            input
+            {
+                width: 80%;
+                background-color: $navbar-color;
+                color: $font-color;
+                border: 1px solid $main-color;
+                outline: none;
+                padding: 1rem;
+                font-size: 1.2rem;
+                
+            }
         }
 
         .inCart__buttons--buttons
@@ -233,16 +271,6 @@
     }
 }
 
-//Categories.js
-.categories
-{
-    display: flex;
-    justify-content: center;
-    background-color: $navbar-color;
-    border-bottom: 1px solid $main-color;
-    font-size: 1rem;
-}
-
 //FooterLinks.js
 .footerLinks
 {
@@ -358,6 +386,11 @@
     {
         font-size: 1.5rem;
         color: $countNumberColor;
+    }
+
+    .counter__stockDetail
+    {
+        padding: 1rem;
     }
 
     .counter__buttons 
@@ -522,7 +555,7 @@
     display: flex;
     align-items: center;
     list-style: none;
-    margin-bottom: 1rem;
+    font-size: 1.4rem;
 
     li
     {
@@ -605,51 +638,6 @@
         &:hover
         {
             color: white;
-        }
-    }
-}
-
-//ProductFinder.js
-.productFinder
-{
-    transition: border 0.2s, color 0.2s; 
-    display: flex;
-    border: 1px solid $finderBackgroundColor;
-    margin-right: auto;
-
-    input
-    {
-        background-color: $finderBackgroundColor;
-        border: 1px solid $finderBackgroundColor;
-        padding: 0.5rem;
-        outline: none;
-        width: 1000px;
-        color: $finderFontColor;
-        font-size: 1.2rem;
-    }
-
-    button
-    {
-        background-color: $finderBackgroundColor;
-        border: 1px solid $finderBackgroundColor;
-        padding: 0.5rem;
-        
-        svg
-        {
-            background-color: $finderBackgroundColor;
-            color: white;
-            width: 1rem;
-            height: 1rem;
-        }
-    }
-
-    &:hover
-    {
-        border: 1px solid $main-color;
-
-        svg
-        {
-            color: $main-color;
         }
     }
 }

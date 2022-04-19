@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react"
 import { toast } from "react-toastify"
 import { contexto } from "./CartContext"
+import { NavLink } from "react-router-dom"
 
 function ItemCount({ id, initial, stock, onAdd }) {
     const [Counter, setCounter] = useState(initial)
@@ -23,7 +24,7 @@ function ItemCount({ id, initial, stock, onAdd }) {
 
 
     const add = () => {
-        if (Counter >= (stock)) {
+        if (Counter >= (stock - StockInCart)) {
             setCounter(Counter + 0)
         }
         else {
@@ -41,7 +42,10 @@ function ItemCount({ id, initial, stock, onAdd }) {
     }
 
     const addToCart = () => {
-        if (stock < StockInCart + Counter) { toast.error(`Ya hay ${StockInCart} copias en el carrito, solo puede llevar ${stock - StockInCart} mas`) }
+
+        if (stock < StockInCart + Counter) {
+            toast.error(`Ya hay ${StockInCart} copias en el carrito, solo puede llevar ${stock - StockInCart} copias mas`)
+        }
         else {
             onAdd(Counter)
         }
@@ -49,13 +53,21 @@ function ItemCount({ id, initial, stock, onAdd }) {
 
     return (
         <div className="counter">
-            <span>Stock disponible: {stock}</span>
-            <div className="counter__buttons">
-                <button onClick={subtract}>-</button>
-                <p>{Counter}</p>
-                <button onClick={add}>+</button>
-            </div>
-            <button onClick={addToCart}>Añadir producto</button>
+            {stock == StockInCart ?
+                <>
+                    <span className="counter__stockDetail">No hay mas copias para agregar al carrito</span>
+                    <NavLink to="/carrito"><button>Ir al carrito</button></NavLink>
+                </> :
+                <>
+                    <span>Stock disponible: {StockInCart !== 0 ? `${stock - StockInCart}` : stock}</span>
+                    <div className="counter__buttons">
+                        <button onClick={subtract}>-</button>
+                        <p>{Counter}</p>
+                        <button onClick={add}>+</button>
+                    </div>
+                    <button onClick={addToCart}>Añadir producto</button>
+                </>
+            }
         </div>
     );
 }

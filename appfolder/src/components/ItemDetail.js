@@ -35,16 +35,13 @@ function ItemDetail({ detalle }) {
       <div className="itemDetail__image">
         <img src={detalle.imagen}></img>
       </div>
-
       <div className="itemDetail__detail">
         <p className="itemDetail__detail--title">{detalle.nombre}</p>
         <p className="itemDetail__detail--price">{price}</p>
         <p><span>Información:</span> {detalle.detalle}</p>
         <p><span>Categoría:</span> {detalle.categoria}</p>
         <p><span>Plataformas:</span> {detalle.plataforma}</p>
-
       </div>
-
       <div className="itemDetail__buttons">
         {seleccionado ? <div className="goCart">
           <NavLink to="/carrito">
