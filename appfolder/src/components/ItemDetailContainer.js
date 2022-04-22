@@ -7,7 +7,7 @@ import { db } from "./Firebase"
 import { getDocs, collection, query, where } from "firebase/firestore"
 
 function ItemDetailContainer() {
-  const [productosDetalle, setProductosDetalle] = useState([])
+  const [FirebaseDB, setFirebaseDB] = useState([])
   const [Loading, setLoading] = useState(true)
   const { id } = useParams()
 
@@ -18,9 +18,9 @@ function ItemDetailContainer() {
     const respuestaJuegos = getDocs(filtroJuego)
 
     respuestaJuegos
-      .then((respuesta) => {
-        const detalleJuego = respuesta.docs.map(doc => doc.data())
-        setProductosDetalle(detalleJuego[0])
+      .then((res) => {
+        const detalleJuego = res.docs.map(doc => doc.data())
+        setFirebaseDB(detalleJuego[0])
       })
       .catch((err) => toast.error(err))
       .finally(() => setLoading(false))
@@ -28,7 +28,7 @@ function ItemDetailContainer() {
 
   return (
     <>
-      {Loading ? <Loader /> : <ItemDetail detalle={productosDetalle} />}
+      {Loading ? <Loader /> : <ItemDetail database={FirebaseDB} />}
     </>
   )
 }

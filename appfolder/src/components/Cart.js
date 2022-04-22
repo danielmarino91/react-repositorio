@@ -10,8 +10,8 @@ import SuccesBuy from "./SuccesBuy"
 
 const Cart = () => {
 
-  const resultado = useContext(contexto)
-  const { emptyCart, removeItem, cart, total, currency, setTotal } = resultado
+  const cartContext = useContext(contexto)
+  const { emptyCart, removeItem, cart, total, currency, setTotal } = cartContext
   const [BuyComplete, setBuyComplete] = useState(false)
   const [BuyInProgress, setBuyInProgress] = useState(false)
   const [Order, setOrder] = useState({})
@@ -92,9 +92,13 @@ const Cart = () => {
                 <p className="inCart__buttons--total">Total: <span>{currency.format(total)}</span></p>
                 <hr></hr>
                 <div className="inCart__buttons--buttons">
-                  {BuyInProgress === false ? <button className="btnBuy" onClick={checkOut}>Terminar compra</button> : <button className="btnBuyInProgress">Espere, por favor</button>}
-                  <button className="btnClearCart" onClick={emptyCart}>Limpiar carrito</button>
-                  <NavLink to="/"><button className="btnGoIndex">Ver más productos</button></NavLink></div>
+                  {BuyInProgress === false ? <><button className="btnBuy" onClick={checkOut}>Terminar compra</button>
+                    <button className="btnClearCart" onClick={emptyCart}>Limpiar carrito</button>
+                    <NavLink to="/"><button className="btnGoIndex">Ver más productos</button></NavLink>
+                  </> :
+                    <button className="btnBuyInProgress">Espere, por favor</button>}
+
+                </div>
               </div>
             </div>
           </>}

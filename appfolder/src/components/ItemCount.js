@@ -7,8 +7,8 @@ function ItemCount({ id, initial, stock, onAdd }) {
     const [Counter, setCounter] = useState(initial)
     const [StockInCart, setStockInCart] = useState()
 
-    const resultado = useContext(contexto)
-    const cart = resultado.cart
+    const cartContext = useContext(contexto)
+    const { cart } = cartContext
 
     useEffect(() => {
         const itemFindedInCart = cart.find(e => e.id === id);
@@ -21,7 +21,6 @@ function ItemCount({ id, initial, stock, onAdd }) {
             setStockInCart(0)
         }
     }, [StockInCart])
-
 
     const add = () => {
         if (Counter >= (stock - StockInCart)) {
@@ -53,7 +52,7 @@ function ItemCount({ id, initial, stock, onAdd }) {
 
     return (
         <div className="counter">
-            {stock == StockInCart ?
+            {stock === StockInCart ?
                 <>
                     <span className="counter__stockDetail">No hay mas copias para agregar al carrito</span>
                     <NavLink to="/carrito"><button>Ir al carrito</button></NavLink>

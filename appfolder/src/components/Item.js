@@ -6,8 +6,8 @@ import { contexto } from "./CartContext"
 
 function Item({ producto }) {
 
-    const resultado = useContext(contexto)
-    const { currency } = resultado
+    const cartContext = useContext(contexto)
+    const { currency } = cartContext
 
     return (
         <Link to={`/item/${producto.id}`}>

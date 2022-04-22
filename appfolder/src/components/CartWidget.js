@@ -5,13 +5,13 @@ import { contexto } from "./CartContext"
 
 function CartWidget() {
 
-    const resultado = useContext(contexto)
-    const { quantity, total, currency } = resultado
+    const cartContext = useContext(contexto)
+    const { quantity, total, currency } = cartContext
 
     return (
         <>
             <div className="cartWidget">
-                {quantity > 0 ? <><AiOutlineShoppingCart /><p>{quantity} - {currency.format(total)}</p></> : <BsCartX/>}
+                {quantity > 0 ? <><AiOutlineShoppingCart /><p>{quantity} - {currency.format(total)}</p></> : <BsCartX />}
             </div>
         </>
     )

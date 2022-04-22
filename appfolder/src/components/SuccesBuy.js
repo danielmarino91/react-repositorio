@@ -6,8 +6,8 @@ import { contexto } from "./CartContext"
 
 const SuccesBuy = ({ name, phone, email, total, items }) => {
 
-    const resultado = useContext(contexto)
-    const { currency } = resultado
+    const cartContext = useContext(contexto)
+    const { currency } = cartContext
 
     return (
         <>
