@@ -6,7 +6,7 @@ function NavBar() {
     return (
         <>
             <nav className="navbar">
-                <Link to="/"><img src={"/assets/kyotogameslogosvg.svg"} alt="Kyoto Games" /></Link>
+                <Link to="/"><img src={"/assets/kyotogameslogosvg.svg"} alt="Kyoto Games" className="logo"/></Link>
                 <Links/>
                 <NavLink to="/carrito"><CartWidget numero="0" /></NavLink>
             </nav>

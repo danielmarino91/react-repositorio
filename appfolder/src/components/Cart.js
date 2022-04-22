@@ -11,7 +11,7 @@ import SuccesBuy from "./SuccesBuy"
 const Cart = () => {
 
   const resultado = useContext(contexto)
-  const { emptyCart, removeItem, cart, total } = resultado
+  const { emptyCart, removeItem, cart, total, currency, setTotal } = resultado
   const [BuyComplete, setBuyComplete] = useState(false)
   const [BuyInProgress, setBuyInProgress] = useState(false)
   const [Order, setOrder] = useState({})
@@ -24,7 +24,7 @@ const Cart = () => {
     const userPhone = document.getElementById("orderPhone").value;
     const userMail = document.getElementById("orderMail").value;
 
-    if ((userName == "") || (userPhone == "") || (userMail == "")) {
+    if ((userName === "") || (userPhone === "") || (userMail === "")) {
       toast.error("Complete todos los campos")
     }
     else if (isNaN(userPhone)) {
@@ -51,29 +51,28 @@ const Cart = () => {
         .then(res => toast.success(`La compra se efectuo con exito, el ID de la compra es ${res.id}`))
         .catch((err) => toast.error(err))
         .finally(() => emptyCart())
+        .finally(() => setTotal(0))
         .finally(() => setBuyInProgress(false))
         .finally(() => setBuyComplete(true))
     }
   }
 
-  const price = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 })
-
-  if (BuyComplete == true) {
-    return (<SuccesBuy name={Order.buyer.name} phone={Order.buyer.phone} email={Order.buyer.mail} />)
+  if (BuyComplete === true) {
+    return (<SuccesBuy name={Order.buyer.name} phone={Order.buyer.phone} email={Order.buyer.mail} total={Order.total} items={Order.items} />)
   }
   else {
     return (
       <>
-        {userCart == 0 ? <div className="cartStyle"><p>El carrito esta vacio</p><BsFillCartXFill /><NavLink to="/"><button className="btnGoIndex">Ver mas productos</button></NavLink></div>
+        {userCart <= 1 ? <div className="cartStyle"><p>El carrito está vacío</p><BsFillCartXFill /><NavLink to="/"><button className="btnGoIndex">Ver más productos</button></NavLink></div>
           :
           <>
             <div className="inCart">
               <div className="inCart__products">
                 {userCart.map(item => (<div className="itemInCart" key={`uniqueID${item.id}`}>
-                  <img src={item.imagen}></img>
+                  <img src={item.imagen} alt={item.item}></img>
                   <div className="itemInCart__details">
-                    <h3><span>Titulo: </span>{item.item}</h3>
-                    <h3><span>Precio: </span>{price.format(item.precio)}</h3>
+                    <h3><span>Título: </span>{item.item}</h3>
+                    <h3><span>Precio: </span>{currency.format(item.precio)}</h3>
                     <h3><span>Cantidad: </span>{item.stock}</h3>
                   </div>
                   <NavLink to={`/item/${item.id}`}><button>Comprar más</button></NavLink>
@@ -84,18 +83,18 @@ const Cart = () => {
                 <div className="inCart__buttons--form">
                   <h3>Ingrese sus datos</h3>
                   <p>Nombre</p>
-                  <input id="orderName" placeHolder="Nombre" maxlength="20" type="text" required></input>
-                  <p>Telefono</p>
-                  <input id="orderPhone" placeHolder="Telefono" maxlength="15" type="tel" required></input>
+                  <input id="orderName" placeholder="Nombre" maxLength="20" type="text" required></input>
+                  <p>Teléfono</p>
+                  <input id="orderPhone" placeholder="Teléfono" maxLength="15" type="tel" required></input>
                   <p>Mail</p>
-                  <input id="orderMail" placeHolder="Mail" maxlength="20" type="email" required></input>
+                  <input id="orderMail" placeholder="Mail" maxLength="20" type="email" required></input>
                 </div>
-                <p className="inCart__buttons--total">Total: <span>{price.format(total)}</span></p>
+                <p className="inCart__buttons--total">Total: <span>{currency.format(total)}</span></p>
                 <hr></hr>
                 <div className="inCart__buttons--buttons">
                   {BuyInProgress === false ? <button className="btnBuy" onClick={checkOut}>Terminar compra</button> : <button className="btnBuyInProgress">Espere, por favor</button>}
                   <button className="btnClearCart" onClick={emptyCart}>Limpiar carrito</button>
-                  <NavLink to="/"><button className="btnGoIndex">Ver mas productos</button></NavLink></div>
+                  <NavLink to="/"><button className="btnGoIndex">Ver más productos</button></NavLink></div>
               </div>
             </div>
           </>}

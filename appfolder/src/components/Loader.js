@@ -4,9 +4,9 @@ const Loader = () => {
     return (
         <svg className="circleLoader">
             <g className="circles">
-                <circle cx="125" cy="125" r="50" fill="none" strokeWidth="15px" stroke="#E0E3E9">
+                <circle cx="125" cy="125" r="50" fill="none" strokeWidth="15px" stroke="#ffff9e">
                 </circle>
-                <circle id="inner" cx="125" cy="125" r="50" fill="none" strokeWidth="12px" stroke="#94c132">
+                <circle id="inner" cx="125" cy="125" r="50" fill="none" strokeWidth="12px" stroke="#cce00e">
                 </circle>
             </g>
         </svg>

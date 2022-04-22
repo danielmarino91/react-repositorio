@@ -6,21 +6,12 @@ import { contexto } from "./CartContext"
 function CartWidget() {
 
     const resultado = useContext(contexto)
-    const itemCartNumber = resultado.quantity
-    const totalPrice = resultado.total;
-
-    const formatter = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2
-    })
-
-    const price = formatter.format(`${totalPrice}`)
+    const { quantity, total, currency } = resultado
 
     return (
         <>
             <div className="cartWidget">
-                {itemCartNumber > 0 ? <><AiOutlineShoppingCart /><p>{itemCartNumber} - {price}</p></> : <BsCartX/>}
+                {quantity > 0 ? <><AiOutlineShoppingCart /><p>{quantity} - {currency.format(total)}</p></> : <BsCartX/>}
             </div>
         </>
     )

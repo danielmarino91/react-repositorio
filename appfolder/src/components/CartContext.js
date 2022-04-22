@@ -38,13 +38,17 @@ const CartContext = ({ children }) => {
         setTotal(0)
     }
 
+    const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 })
+
     const contextValue = {
         cart: Cart,
         total: Total,
+        setTotal: setTotal,
         quantity: Quantity,
         addItem: addItem,
         removeItem: removeItem,
         emptyCart: emptyCart,
+        currency: currency
     }
 
     return (

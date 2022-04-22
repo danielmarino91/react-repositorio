@@ -8,19 +8,11 @@ function ItemDetail({ detalle }) {
 
   const [seleccionado, setseleccionado] = useState(false);
   const resultado = useContext(contexto)
-  const addItem = resultado.addItem
-
-  const formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2
-  })
-
-  const price = formatter.format(`${detalle.precio}`)
+  const { addItem, currency } = resultado
 
   const onAdd = (unidadSeleccionada) => {
 
-    if ((unidadSeleccionada != undefined) && (unidadSeleccionada > 1)) {
+    if ((unidadSeleccionada !== undefined) && (unidadSeleccionada > 1)) {
       setseleccionado(unidadSeleccionada)
       toast.success(`Se agregaron ${unidadSeleccionada} copias de ${detalle.nombre} al carrito`)
     }
@@ -33,11 +25,11 @@ function ItemDetail({ detalle }) {
   return (
     <div className="itemDetail">
       <div className="itemDetail__image">
-        <img src={detalle.imagen}></img>
+        <img src={detalle.imagen} alt={detalle.nombre}></img>
       </div>
       <div className="itemDetail__detail">
         <p className="itemDetail__detail--title">{detalle.nombre}</p>
-        <p className="itemDetail__detail--price">{price}</p>
+        <p className="itemDetail__detail--price">{currency.format(detalle.precio)}</p>
         <p><span>Información:</span> {detalle.detalle}</p>
         <p><span>Categoría:</span> {detalle.categoria}</p>
         <p><span>Plataformas:</span> {detalle.plataforma}</p>
